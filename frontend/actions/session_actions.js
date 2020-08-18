@@ -21,8 +21,8 @@ const logoutCurrentUser = () => {
 // errors is an object
 const receiveErrors = (errors) => {
     return {
-      type: RECEIVE_ERRORS,
-      errors
+      type: RECEIVE_SESSION_ERRORS,
+      errors // [invalid info, try again] // null
     };
 };
 

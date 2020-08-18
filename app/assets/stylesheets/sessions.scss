@@ -1,3 +1,41 @@
 // Place all the styles related to the sessions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.login-form-container {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background-position: center;
+    width: 450px;
+    box-shadow: 0 0 3px 0 rgba(0,0,0,0.3);
+    background: #ffffff;
+    padding: 20px;
+    margin: 8% auto 0;
+    text-align: center;
+}
+
+.login-form {
+    position: relative;
+    z-index: 1;
+    background-color: #ffffff;
+    max-width: 400px;
+    padding: 30px;
+    text-align: center;
+}
+
+.login-form input {
+    font-family: "Roboto", sans-serif;
+    outline: 1;
+    background: f2f2f2;
+    width: 100%;
+    border: 0;
+    margin: 0 0 15px;
+    padding: 15px;
+    box-sizing: border-box;
+    font-size: 14px; 
+}
+
+.labels {
+    font-family: sans-serif
+}
