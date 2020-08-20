@@ -4,13 +4,19 @@ import { Link } from "react-router-dom";
 import { login } from "../../actions/session_actions";
 import SessionForm from "./session_form";
 
+
 const mapStateToProps = ({ errors }) => {
   return {
     errors: errors.session,
     afterWelcomeMessage: "Sign into your brewBottle member account",
     formType: "Login",
-    buttonMessage: "Login",
-    navLink: <Link to="/signup">Don't have an account? Sign up</Link>,
+    buttonMessage: "SIGN IN",
+
+    navLink: (
+      <p>
+        Don't have an account? <Link to="/signup">Sign Up</Link>
+      </p>
+    ),
   };
 };
 

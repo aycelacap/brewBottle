@@ -8,6 +8,7 @@ class SessionForm extends React.Component {
       password: "",
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.demoUser = this.demoUser.bind(this);
   }
 
   update(field) {
@@ -21,6 +22,8 @@ class SessionForm extends React.Component {
     e.preventDefault();
     const user = Object.assign({}, this.state);
     this.props.processForm(user);
+    // redirect: use history
+    this.props.history.push("/");
   }
 
   renderErrors() {
@@ -31,6 +34,56 @@ class SessionForm extends React.Component {
         ))}
       </ul>
     );
+  }
+
+  // demoUser() {
+  //   const demoUser = {
+  //     email: "cafeaulait@brewbottle.cafe",
+  //     password: "hunter12",
+  //   };
+  //   this.setState({
+  //     email: "cafeaulait@brewbottle.cafe",
+  //     password: "hunter12",
+  //   });
+  //   setTimeout(() => this.props.history.push("/"), 500);
+  // }
+
+  demoUser(e) {
+    e.preventDefault();
+    const demoUser = {
+      email: "cafeaulait@brewbottle.cafe",
+      password: "hunter12",
+      // first_name: "Albertle",
+      // last_name: "Turtle",
+    };
+    let { email, password } = demoUser;
+    let interval = 150;
+    let login = () => {
+      this.props.processForm(this.state);
+      this.props.history.push("/")
+    };
+    if (this.state.email !== email) {
+      let inputEmail = setInterval(() => {
+        if (this.state.email !== email) {
+          let tempEmail = email.slice(0, this.state.email.length + 1);
+          this.setState({ email: tempEmail });
+        } else {
+          clearInterval(inputEmail);
+          fillPassword();
+        }
+      }, interval);
+    }
+    let fillPassword = () => {
+      let inputPassword = setInterval(() => {
+        if (this.state.password !== password) {
+          let tempPassword = password.slice(0, this.state.password.length + 1);
+          this.setState({ password: tempPassword });
+        } else {
+          clearInterval(inputPassword);
+          login();
+        }
+      }, interval);
+    };
   }
 
   render() {
@@ -44,10 +97,10 @@ class SessionForm extends React.Component {
           {this.renderErrors()}
           <div className="login-form">
             <label className="labels">
-              Email:
+              Email
               <input
                 type="email"
-                placeholder="email"
+                placeholder="email address"
                 value={this.state.email}
                 onChange={this.update("email")}
                 className="login-input"
@@ -55,7 +108,7 @@ class SessionForm extends React.Component {
             </label>
             <br />
             <label className="labels">
-              Password:
+              Password
               <input
                 type="password"
                 placeholder="password"
@@ -70,8 +123,16 @@ class SessionForm extends React.Component {
               type="submit"
               value={this.props.buttonMessage}
             />
+            <div>
+              <input
+                className="session-submit"
+                type="submit"
+                value="DEMO USER"
+                onClick={this.demoUser}
+              />
+            </div>
             <br />
-            {this.props.navLink}
+            <div className="if-user-or-not">{this.props.navLink}</div>
           </div>
         </form>
       </div>

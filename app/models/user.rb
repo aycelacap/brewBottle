@@ -6,6 +6,7 @@ class User < ApplicationRecord
     after_initialize :ensure_session_token
 
     attr_reader :password
+    attr_reader :confirm_password
 
     # AASPIRE
 
@@ -21,6 +22,7 @@ class User < ApplicationRecord
     end
 
     def password=(password)
+        @confirm_password = confirm_password
         @password = password
         self.password_digest = BCrypt::Password.create(password)
     end

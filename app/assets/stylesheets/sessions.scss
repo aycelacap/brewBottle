@@ -7,7 +7,7 @@
     padding: 0;
     font-family: sans-serif;
     background-position: center;
-    width: 450px;
+    width: 500px;
     box-shadow: 0 0 3px 0 rgba(0,0,0,0.3);
     background: #ffffff;
     padding: 20px;
@@ -21,7 +21,8 @@
     background-color: #ffffff;
     max-width: 400px;
     padding: 30px;
-    text-align: center;
+    text-align: left;
+    font-size: 13px;
 }
 
 .login-form input {
@@ -29,13 +30,25 @@
     outline: 1;
     background: f2f2f2;
     width: 100%;
-    border: 0;
+    border: 1px;
     margin: 0 0 15px;
     padding: 15px;
     box-sizing: border-box;
     font-size: 14px; 
+    text-align: center;
 }
 
 .labels {
-    font-family: sans-serif
+    font-family: sans-serif;
+}
+
+.session-submit {
+    background: #01a1dd;
+    color: #f3f3f3;
+    font-weight: normal;
+}
+
+.if-user-or-not {
+    text-align: center;
+    text-decoration: none;
 }
