@@ -1,0 +1,41 @@
+.navbar-logo {
+    cursor: pointer;
+    width: 50px;
+    height: 55px;
+    float: left;
+}
+
+.header-group {
+  font-size: 13px;
+  background-color: #ffffff;
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+  width: 100%;
+}
+
+.header-group p {
+    padding: 30px
+}
+
+#left-nav {
+    text-decoration: none;
+    color: black;
+    float: left;
+    padding: 30px;
+}
+
+#right-nav {
+    text-decoration: none;
+    color: black;
+    float: right;
+    padding: 30px;
+}
+
+.header-button {
+    background: none;
+    float: right;
+    padding: 30px;
+    border: none;
+    cursor: pointer;
+}

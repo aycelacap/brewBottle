@@ -7,8 +7,7 @@
     padding: 0;
     font-family: sans-serif;
     background-position: center;
-    width: 500px;
-    box-shadow: 0 0 3px 0 rgba(0,0,0,0.3);
+    width: 600px;
     background: #ffffff;
     padding: 20px;
     margin: 8% auto 0;
@@ -19,8 +18,8 @@
     position: relative;
     z-index: 1;
     background-color: #ffffff;
-    max-width: 400px;
-    padding: 30px;
+    max-width: 450px;
+    padding: 50px;
     text-align: left;
     font-size: 13px;
 }
@@ -34,12 +33,15 @@
     margin: 0 0 15px;
     padding: 15px;
     box-sizing: border-box;
+    box-shadow: 0 0 3px 0 rgba(0,0,0,0.3);
     font-size: 14px; 
     text-align: center;
 }
 
 .labels {
     font-family: sans-serif;
+    padding-bottom: 10px;
+    margin-bottom: 5px;
 }
 
 .session-submit {
@@ -52,3 +54,7 @@
     text-align: center;
     text-decoration: none;
 }
+
+// .login-form dropdown-signup {
+
+// }

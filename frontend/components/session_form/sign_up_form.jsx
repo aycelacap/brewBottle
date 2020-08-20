@@ -25,7 +25,7 @@ class SignUpForm extends React.Component {
     e.preventDefault();
       const user = Object.assign({}, this.state);
       this.props.processForm(user);
-      this.props.history.push("/");
+      // this.props.history.push("/");
   }
 
   renderErrors() {
@@ -74,7 +74,7 @@ class SignUpForm extends React.Component {
             <label className="labels">
               Email Address
               <input
-                type="text"
+                type="email"
                 placeholder="email address"
                 value={this.state.email}
                 onChange={this.update("email")}
@@ -89,17 +89,6 @@ class SignUpForm extends React.Component {
                 placeholder="password"
                 value={this.state.password}
                 onChange={this.update("password")}
-                className="login-input"
-              />
-            </label>
-            <br />
-            <label className="labels">
-              How did you first hear about Blue Bottle?
-              <input
-                type="text"
-                placeholder="--SELECT ONE--"
-                value={this.state.select_one}
-                onChange={this.update("select_one")}
                 className="login-input"
               />
             </label>

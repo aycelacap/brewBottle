@@ -23,7 +23,7 @@ class SessionForm extends React.Component {
     const user = Object.assign({}, this.state);
     this.props.processForm(user);
     // redirect: use history
-    this.props.history.push("/");
+    // this.props.history.push("/");
   }
 
   renderErrors() {
@@ -51,13 +51,13 @@ class SessionForm extends React.Component {
   demoUser(e) {
     e.preventDefault();
     const demoUser = {
-      email: "cafeaulait@brewbottle.cafe",
+      email: "caffeinated@brewbottle.cafe",
       password: "hunter12",
-      // first_name: "Albertle",
-      // last_name: "Turtle",
+      first_name: "Caffeinated",
+      last_name: "Brew",
     };
-    let { email, password } = demoUser;
-    let interval = 150;
+    let { email, password, first_name, last_name} = demoUser;
+    let interval = 100;
     let login = () => {
       this.props.processForm(this.state);
       this.props.history.push("/")

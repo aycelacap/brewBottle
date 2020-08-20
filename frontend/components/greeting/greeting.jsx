@@ -3,35 +3,67 @@ import { Link } from "react-router-dom";
 
 const Greeting = ({ currentUser, logout }) => {
   const sessionLinks = () => (
-    <nav className="login-signup">
-      <Link to="/">brewBottle</Link>
+    <nav className="header-group">
+      <Link to="/">
+        <img
+          className="navbar-logo"
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSnzseHuGCDLVHzlbP6aD2oKcCr2F53Hhul4g&usqp=CAU"
+        />
+      </Link>
+      <Link id="left-nav" to="/">
+        SHOP
+      </Link>
       &nbsp; &nbsp;
-      <Link to="/">VISIT</Link>
+      <Link id="left-nav" to="/">
+        VISIT
+      </Link>
       &nbsp; &nbsp;
-      <Link to="/">LEARN</Link>
+      <Link id="left-nav" to="/">
+        LEARN
+      </Link>
       &nbsp; &nbsp;
-      <Link to="/">SUBSCRIBE</Link>
+      <Link id="right-nav" to="/">
+        SUBSCRIBE
+      </Link>
       &nbsp; &nbsp;
-      <Link to="/login">SIGN IN</Link>
+      <Link id="right-nav" to="/login">
+        SIGN IN
+      </Link>
     </nav>
   );
+
+
   const personalGreeting = () => (
     <hgroup className="header-group">
-      <h2 className="header-name">Hi, {currentUser.first_name}!</h2>
+      <img
+        className="navbar-logo"
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSnzseHuGCDLVHzlbP6aD2oKcCr2F53Hhul4g&usqp=CAU"
+      />
       &nbsp; &nbsp;
-      <Link to="/">brewBottle</Link>
+      <Link id="left-nav" to="/">
+        brewBottle
+      </Link>
       &nbsp; &nbsp;
-      <Link to="/">VISIT</Link>
+      <Link id="left-nav" to="/">
+        VISIT
+      </Link>
       &nbsp; &nbsp;
-      <Link to="/">LEARN</Link>
+      <Link id="left-nav" to="/">
+        LEARN
+      </Link>
       &nbsp; &nbsp;
-      <Link to="/">SUBSCRIBE</Link>
+      <p id="right-nav">Hi, {currentUser.first_name}!</p>
+      &nbsp; &nbsp;
+      <Link id="right-nav" to="/">
+        SUBSCRIBE
+      </Link>
       &nbsp; &nbsp;
       <button className="header-button" onClick={logout}>
         Log Out
       </button>
     </hgroup>
   );
+
 
   return currentUser ? personalGreeting() : sessionLinks();
 };
