@@ -9,7 +9,7 @@ class SignUpForm extends React.Component {
       email: "",
       password: "",
       confirm_password: "",
-      select_one: ""
+      select_one: "",
     };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -21,11 +21,15 @@ class SignUpForm extends React.Component {
       });
   }
 
+  componentWillUnmount() {
+    this.props.clearErrors();
+  }
+
   handleSubmit(e) {
     e.preventDefault();
-      const user = Object.assign({}, this.state);
-      this.props.processForm(user);
-      // this.props.history.push("/");
+    const user = Object.assign({}, this.state);
+    this.props.processForm(user);
+    // this.props.history.push("/");
   }
 
   renderErrors() {

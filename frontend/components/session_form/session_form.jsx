@@ -36,6 +36,10 @@ class SessionForm extends React.Component {
     );
   }
 
+  componentWillUnmount() {
+    this.props.clearErrors();
+  }
+
   // demoUser() {
   //   const demoUser = {
   //     email: "cafeaulait@brewbottle.cafe",
@@ -61,7 +65,7 @@ class SessionForm extends React.Component {
     let login = () => {
       this.props.processForm(this.state);
       this.props.history.push("/")
-    };
+    }; 
     if (this.state.email !== email) {
       let inputEmail = setInterval(() => {
         if (this.state.email !== email) {
