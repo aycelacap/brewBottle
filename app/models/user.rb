@@ -1,3 +1,4 @@
+require 'bcrypt'
 class User < ApplicationRecord
 
     validates :password_digest, presence: true
