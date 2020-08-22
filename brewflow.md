@@ -8,25 +8,21 @@ link to starting auth from scratch: https://github.com/appacademy/cohort-resourc
 3. controllers
     create controllers and find in routes as needed
 
-   
-
-
-
 ** FRONTEND **
-    actions
-        session_actions
+    backend routes
+    ajax requests
+    actions/thunk
+    reducers/combine reducers 
+    store 
     components
-        session_form
-        login_form_container
-        signup_form_container
-    
+        - mSTP, mSTP
+        - forms 
+        
+4. Views
 
 
 
 i. session API util (ajax requests, BE SURE to import)
         test on window by window.login = login
-ii. 
-
-4. views
 
 
