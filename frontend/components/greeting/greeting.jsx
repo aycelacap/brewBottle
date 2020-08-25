@@ -10,7 +10,7 @@ const Greeting = ({ currentUser, logout }) => {
           src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSnzseHuGCDLVHzlbP6aD2oKcCr2F53Hhul4g&usqp=CAU"
         />
       </Link>
-      <Link id="left-nav" to="/">
+      <Link id="left-nav" to="/products">
         SHOP
       </Link>
       &nbsp; &nbsp;
@@ -40,8 +40,8 @@ const Greeting = ({ currentUser, logout }) => {
         src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSnzseHuGCDLVHzlbP6aD2oKcCr2F53Hhul4g&usqp=CAU"
       />
       &nbsp; &nbsp;
-      <Link id="left-nav" to="/">
-        brewBottle
+      <Link id="left-nav" to="/products">
+        SHOP
       </Link>
       &nbsp; &nbsp;
       <Link id="left-nav" to="/">
