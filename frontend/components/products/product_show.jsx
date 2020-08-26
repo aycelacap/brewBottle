@@ -11,13 +11,13 @@ class Product extends React.Component {
 
     render() {
         let product = this.props.product;
-
         if (!product) return null;
         return (
             <div>
                 <div className='product-show-whole-page-container'>
                     <div className='product-left-side-img'>
                         <img className='show-pic' src={product.photoUrls[0]} />
+                        <br/>
                         <img className='show-pic' src={product.photoUrls[1]} />
                         {/* <img className='show-pic-show-page' src={`${product.photos}`} alt="" /> */}
                     </div>

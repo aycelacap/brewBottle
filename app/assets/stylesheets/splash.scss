@@ -1,7 +1,7 @@
 .splash-page-main-container {
-    display: flex;
-    justify-content: center;
-    box-sizing: border-box;
+    // display: flex;
+    // justify-content: center;
+    // box-sizing: border-box;
     // margin-top: 7%;
     // margin-bottom: 2%;
 }
@@ -10,7 +10,8 @@
     display: flex;
     justify-content: space-evenly;
     background-color: #fafafa;
-    flex-direction: column;
+    flex-wrap: wrap;
+    padding: 10px 20px;
     // flex-wrap: wrap;
     // justify-content: center;  
     // // margin-bottom: 2.8125rem;
@@ -26,11 +27,54 @@
 // .splash-page-img {
 //     display: flex;
 //     flex-wrap: wrap;
-//     max-width: 900px;
-//     height: auto;
-//     object-fit: cover;
-//     position: absolute;
-//     z-index: 1;
-//     left: 0;
-//     top: 0;
+//     height: 50%;
+//     width: 50%;
+//     // max-width: 900px;
+//     // height: auto;
+//     // object-fit: cover;
+//     position: relative;
+//     // z-index: 1;
+//     // left: 0;
+//     // top: 0;
 // }
+
+
+.splash-page-main-container #polaroid {
+//   width: 33.33%;
+//   background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.polaroid {
+    max-height: 70%;
+    width: 31%;
+    padding: 5px;
+    float: left;
+    background-color: transparent;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2)
+}
+
+.quote {
+  box-sizing: border-box;
+  padding-top: 200px;
+  background: #f9f9f9;
+  border-left: 10px solid #ccc;
+  margin: 1.5em 10px;
+  padding: 0.5em 10px;
+  
+}
+
+.quote:before {
+  color: #ccc;
+  content: open-quote;
+  font-size: 4em;
+  line-height: 0.4em;
+  margin-right: 0.50em;
+  vertical-align: -0.2em;
+}
+
+.quote p {
+  display: block;
+  text-align: center;
+  font-size: 42px;
+}
