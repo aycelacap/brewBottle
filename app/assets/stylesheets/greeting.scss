@@ -12,10 +12,29 @@
   margin: 0px;
   padding: 0px;
   width: 100%;
+  overflow: hidden;
+}
+
+.header-group Link:hover {
+    color: #01a1dd;
 }
 
 .header-group p {
     padding: 30px
+}
+
+.header-group a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.dropdown {
+    float: left;
+    overflow: hidden;
 }
 
 #left-nav {
@@ -38,4 +57,18 @@
     padding: 30px;
     border: none;
     cursor: pointer;
+}
+
+.dropdown .dropbtn {
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+}
+
+.header-group a:hover, .dropdown:hover .dropbtn {
+  color: #01a1dd;
 }

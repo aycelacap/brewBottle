@@ -1,0 +1,36 @@
+.splash-page-main-container {
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+    // margin-top: 7%;
+    // margin-bottom: 2%;
+}
+
+.splash-page-main-image-container {
+    display: flex;
+    justify-content: space-evenly;
+    background-color: #fafafa;
+    flex-direction: column;
+    // flex-wrap: wrap;
+    // justify-content: center;  
+    // // margin-bottom: 2.8125rem;
+    // // margin-left: 6.875rem;
+    // // z-index: 0;
+    // width: 100%;
+    // height: auto;
+    // object-fit: contain;
+    // position: relative;
+}
+
+
+// .splash-page-img {
+//     display: flex;
+//     flex-wrap: wrap;
+//     max-width: 900px;
+//     height: auto;
+//     object-fit: cover;
+//     position: absolute;
+//     z-index: 1;
+//     left: 0;
+//     top: 0;
+// }

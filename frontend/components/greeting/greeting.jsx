@@ -10,17 +10,38 @@ const Greeting = ({ currentUser, logout }) => {
           src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSnzseHuGCDLVHzlbP6aD2oKcCr2F53Hhul4g&usqp=CAU"
         />
       </Link>
-      <Link id="left-nav" to="/products">
-        SHOP
-      </Link>
-      &nbsp; &nbsp;
-      <Link id="left-nav" to="/">
-        VISIT
-      </Link>
-      &nbsp; &nbsp;
-      <Link id="left-nav" to="/">
-        LEARN
-      </Link>
+      <div className="dropdown">
+          <Link id="left-nav" to="/products">SHOP
+          <button className="dropbtn"></button>
+          <div className="dropdown-content">
+            <a href="/">hi</a>
+            <a href="/">hello</a>
+            <a href="/">hey</a>
+          </div>
+          </Link>
+          &nbsp; &nbsp;
+          <Link id="left-nav" to="/">
+          VISIT
+            <button className="dropbtn">
+            </button>
+          <div className="dropdown-content">
+            <a href="/">hi</a>
+            <a href="/">hello</a>
+            <a href="/">hey</a>
+          </div>
+          </Link>
+          &nbsp; &nbsp;
+          <Link id="left-nav" to="/">
+          LEARN
+            <button className="dropbtn">
+            </button>
+          <div className="dropdown-content">
+            <a href="/">hi</a>
+            <a href="/">hello</a>
+            <a href="/">hey</a>
+          </div>
+          </Link>
+      </div>
       &nbsp; &nbsp;
       <Link id="right-nav" to="/">
         SUBSCRIBE
@@ -35,22 +56,47 @@ const Greeting = ({ currentUser, logout }) => {
 
   const personalGreeting = () => (
     <hgroup className="header-group">
-      <img
-        className="navbar-logo"
-        src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSnzseHuGCDLVHzlbP6aD2oKcCr2F53Hhul4g&usqp=CAU"
-      />
-      &nbsp; &nbsp;
-      <Link id="left-nav" to="/products">
-        SHOP
-      </Link>
-      &nbsp; &nbsp;
-      <Link id="left-nav" to="/">
-        VISIT
-      </Link>
-      &nbsp; &nbsp;
-      <Link id="left-nav" to="/">
-        LEARN
-      </Link>
+          <Link to="/">  
+              <img
+                className="navbar-logo"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSnzseHuGCDLVHzlbP6aD2oKcCr2F53Hhul4g&usqp=CAU"
+              />
+          </Link>
+      <div className="drop-down-button">
+          &nbsp; &nbsp;
+          <Link id="left-nav" to="/products">
+          SHOP
+            <button className="dropbtn">
+            </button>
+          <div className="dropdown-content">
+            <a href="/">hi</a>
+            <a href="/">hello</a>
+            <a href="/">hey</a>
+          </div>
+          </Link>
+          &nbsp; &nbsp;
+          <Link id="left-nav" to="/">
+          VISIT
+            <button className="dropbtn">
+            </button>
+          <div className="dropdown-content">
+            <a href="/">hi</a>
+            <a href="/">hello</a>
+            <a href="/">hey</a>
+          </div>
+          </Link>
+          &nbsp; &nbsp;
+          <Link id="left-nav" to="/">
+          LEARN
+            <button className="dropbtn">
+            </button>
+          <div className="dropdown-content">
+            <a href="/">hi</a>
+            <a href="/">hello</a>
+            <a href="/">hey</a>
+          </div>
+          </Link>
+      </div>
       &nbsp; &nbsp;
       <p id="right-nav">Hi, {currentUser.first_name}!</p>
       &nbsp; &nbsp;
@@ -69,3 +115,11 @@ const Greeting = ({ currentUser, logout }) => {
 };
 
 export default Greeting;
+
+
+// display flex, space between on the navbar = main nav
+// divide left and right in separate divs, display flex
+
+// .navbar {
+
+// }

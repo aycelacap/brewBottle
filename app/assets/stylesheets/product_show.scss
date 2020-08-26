@@ -1,0 +1,26 @@
+.product-show-whole-page-container {
+    display: flex;
+    padding: .5rem;
+    box-sizing: border-box;
+    justify-content: center;
+    width: 100vw;
+    margin-top: 5.688rem;
+}
+
+.product-left-side-img {
+    display: flex;
+    width: 40%;
+    height: auto;
+}
+
+.right-side-whole-container {
+    display: flex;
+    padding: .5rem;
+    box-sizing: border-box;
+    padding-right: .78125rem;
+    padding-left: .78125rem;
+    flex-direction: column;
+    height: auto;
+    width: 23%;
+    justify-content: space-evenly;
+}

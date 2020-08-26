@@ -7,12 +7,12 @@ const ProductIndexItem = ({ product }) => {
         <li className='whole-page-wrapper'>
             <div className='whole-content-wrapper'>
                 <div className='product-index-item-container'>
-                    {/* <Link to={`/products/${product.id}`}> */}
+                    <Link to={`/products/${product.id}`}>
                         <div className='product-index-item-picture'>
-                            <img className='show-pic' src={product.photoUrls[0]} height="100px" width="100px"/>
-                            <img className='show-pic' src={product.photoUrls[1]} height="100px" width="100px"/>
+                            <img className='show-pic' src={product.photoUrls[0]}/>
+                            {/* <img className='show-pic' src={product.photoUrls[1]}/> */}
                         </div>
-                    {/* </Link> */}
+                    </Link>
                 </div>
 
                 <div className='product-item-text'>
@@ -20,7 +20,7 @@ const ProductIndexItem = ({ product }) => {
                         {product.name}
                     </div>
                     <div className='product-item-price'>
-                        ${product.price}USD
+                        ${product.price} USD
                     </div>
                 </div>
             </div>

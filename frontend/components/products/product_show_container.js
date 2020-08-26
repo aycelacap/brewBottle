@@ -7,8 +7,9 @@ import { fetchProduct, fetchProducts } from '../../actions/product_actions';
 // our state will pass the product and current user for when they purchase
 
 const mSTP = (state, ownProps) => {
+// debugger
     return {
-        product: state.entities.products[ownProps.match.params],
+        product: state.entities.products[ownProps.match.params.id],
         currentUser: state.session.id
     }
 }
