@@ -55,6 +55,7 @@ const Greeting = ({ currentUser, logout }) => {
 
 
   const personalGreeting = () => (
+    <div>
     <hgroup className="header-group">
           <Link to="/">  
               <img
@@ -66,8 +67,8 @@ const Greeting = ({ currentUser, logout }) => {
           &nbsp; &nbsp;
           <Link id="left-nav" to="/products">
           SHOP
-            <button className="dropbtn">
-            </button>
+            {/* <button className="dropbtn">
+            </button> */}
           <div className="dropdown-content">
             <a href="/">hi</a>
             <a href="/">hello</a>
@@ -77,8 +78,8 @@ const Greeting = ({ currentUser, logout }) => {
           &nbsp; &nbsp;
           <Link id="left-nav" to="/">
           VISIT
-            <button className="dropbtn">
-            </button>
+            {/* <button className="dropbtn">
+            </button> */}
           <div className="dropdown-content">
             <a href="/">hi</a>
             <a href="/">hello</a>
@@ -88,8 +89,8 @@ const Greeting = ({ currentUser, logout }) => {
           &nbsp; &nbsp;
           <Link id="left-nav" to="/">
           LEARN
-            <button className="dropbtn">
-            </button>
+            {/* <button className="dropbtn">
+            </button> */}
           <div className="dropdown-content">
             <a href="/">hi</a>
             <a href="/">hello</a>
@@ -98,16 +99,29 @@ const Greeting = ({ currentUser, logout }) => {
           </Link>
       </div>
       &nbsp; &nbsp;
-      <p id="right-nav">Hi, {currentUser.first_name}!</p>
+      <p className="right-nav">Hi, {currentUser.first_name}!</p>
+      {/* <p className="personal-greeting">Hi, {currentUser.first_name}!</p> */}
       &nbsp; &nbsp;
       <Link id="right-nav" to="/">
         SUBSCRIBE
       </Link>
       &nbsp; &nbsp;
-      <button className="header-button" onClick={logout}>
-        Log Out
+      <button className="logout-button" onClick={logout}>
+        LOG OUT
       </button>
     </hgroup>
+      
+      
+      {/* <div className="logged-in-right">
+      <Link id="right-nav" to="/">
+        SUBSCRIBE
+      </Link>
+      &nbsp; &nbsp;
+      <button className="logout-button" onClick={logout}>
+        LOG OUT
+      </button>
+      </div> */}
+    </div>
   );
 
 

@@ -1,0 +1,124 @@
+.footer-wrapper {
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid #d3d3d3;
+    font-size: .875rem;
+    line-height: 1rem;
+    padding-top: 2.8125rem;
+    width: 100%;
+    border-top: .0625rem solid #e0e0e0;
+    border-bottom: .0625rem solid #e0e0e0;
+    margin-bottom: 3%;
+}
+
+.footer-wrapper-top-section {
+    display: flex;
+    // border: 1px solid blue;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    float: left;
+    margin-right: 1.78%;
+    width: 85.4598%;
+    margin-left: 7.2701%;
+    color: #333;
+}
+
+.footer-wrapper-bottom-section {
+    display: flex;
+    // border: 1px solid green;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    float: left;
+    margin-right: 1.78%;
+    width: 85.4598%;
+    margin-left: 7.2701%;
+    color: #333;
+}
+
+.top-container {
+    width: 23.4364%;
+    height: 17.69rem;
+    text-align: left;
+    // border: 1px solid red;
+}
+
+.bottom-container {
+    width: 23.4364%;
+    // height: 17.69rem;
+    text-align: left;
+}
+
+.bullet {
+    list-style-type: none;
+}
+
+.gift,
+.career,
+.contact {
+    font-size: .775rem;
+    font-weight: 700;
+    line-height: 1.05rem;
+    margin-bottom: 1.375rem;
+    text-align: left;
+    text-decoration: solid;
+    color: rgb(86, 86, 86);
+}
+
+.account-title,
+.help-title,
+.about-us-title,
+.science-title {
+    font-size: .775rem;
+    font-weight: 700;
+    line-height: 15.4px;
+    margin-bottom: 1.375rem;
+    text-decoration-style: solid;
+    color: rgb(86, 86, 86);
+}
+
+.account,
+.title,
+.about,
+.science,
+.contact,
+.help {
+    color: rgb(86, 86, 86);
+    font-size: .775rem;
+    line-height: 1.05rem;
+    margin-bottom: 1.375rem;
+    text-align: left;
+    text-decoration-style: solid;
+}
+
+
+.icons-container {
+    height: 1.2158125rem;
+    width: 16.125rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+    font-size: 1rem;
+    line-height: 1.2rem;
+}
+
+.icons-container:hover {
+    cursor: pointer;
+    transition: 0.5s;
+    text-shadow: 1px 1px 10px white, 0 0 15px white, 0 0 20px white;
+}
+
+.account {
+    text-decoration: none;
+}
+
+.fab {
+    font-size: 2.5rem;
+}
+
+.fab:hover {
+    cursor: pointer;
+    color: goldenrod;
+    transition: 0.5s;
+    text-shadow: 1px 1px 10px gold, 0 0 15px gold, 0 0 20px gold;
+}

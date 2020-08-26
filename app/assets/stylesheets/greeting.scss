@@ -13,11 +13,15 @@
   padding: 0px;
   width: 100%;
   overflow: hidden;
+  // display: inline-block;
 }
+
 
 .header-group Link:hover {
     color: #01a1dd;
 }
+
+
 
 .header-group p {
     padding: 30px
@@ -32,6 +36,10 @@
   text-decoration: none;
 }
 
+.header-group a:active {
+  color: #01a1dd
+}
+
 .dropdown {
     float: left;
     overflow: hidden;
@@ -43,20 +51,24 @@
     float: left;
     padding: 30px;
 }
-
 #right-nav {
     text-decoration: none;
     color: black;
     float: right;
     padding: 30px;
+    
+    // text-align: center;
+    // display: block;
 }
 
-.header-button {
+.logout-button {
     background: none;
     float: right;
     padding: 30px;
     border: none;
     cursor: pointer;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 16px;
 }
 
 .dropdown .dropbtn {
@@ -72,3 +84,16 @@
 .header-group a:hover, .dropdown:hover .dropbtn {
   color: #01a1dd;
 }
+
+// .personal-greeting {
+//   text-decoration: none;
+//   color: black;
+//   float: center;
+//   padding: 30px;
+//   text-align: center;
+//   font-size: 16px;
+// }
+
+// .logged-in-right > #right-nav{
+//   justify-content: center;
+// }

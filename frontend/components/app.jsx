@@ -4,6 +4,7 @@ import { Route, Redirect, Switch, Link, HashRouter } from "react-router-dom";
 import LogInFormContainer from "./session_form/login_form_container";
 import SignUpFormContainer from "./session_form/signup_form_container";
 import GreetingContainer from "./greeting/greeting_container";
+import Footer from '../components/footer/footer'
 import ProductIndexContainer from './products/product_index_container'
 import ProductShowContainer from './products/product_show_container'
 
@@ -15,12 +16,14 @@ const App = () => (
     <header>
       <GreetingContainer />
     </header>
-
-    <Route exact path='/products/:id' component={ProductShowContainer}/>
-    <Route exact path='/products' component={ProductIndexContainer} />
-    <AuthRoute exact path="/login" component={LogInFormContainer} />
-    <AuthRoute exact path="/signup" component={SignUpFormContainer} />
-    <Route exact path="/" component={Splash} />
+   <Switch> 
+      <Route exact path='/products/:id' component={ProductShowContainer}/>
+      <Route exact path='/products' component={ProductIndexContainer} />
+      <AuthRoute exact path="/login" component={LogInFormContainer} />
+      <AuthRoute exact path="/signup" component={SignUpFormContainer} />
+      <Route exact path="/" component={Splash} />
+    </Switch>
+    <Footer />
   </div>
 );
 

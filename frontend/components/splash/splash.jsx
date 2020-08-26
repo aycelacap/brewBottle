@@ -8,6 +8,11 @@ const Splash = () => {
           className="splash-image"
           src={window.kyotoBrewBottle}
         />
+
+        <p className="quote-one">
+          LIFE HAPPENS, COFFEE HELPS
+        </p>
+
         <div className='splash-page-main-container'>
           <div className='splash-page-main-image-container'>
             <img className='polaroid' src={window.espr2} alt="" />

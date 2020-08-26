@@ -10,7 +10,6 @@ const ProductIndexItem = ({ product }) => {
                     <Link to={`/products/${product.id}`}>
                         <div className='product-index-item-picture'>
                             <img className='show-pic' src={product.photoUrls[0]}/>
-                            {/* <img className='show-pic' src={product.photoUrls[1]}/> */}
                         </div>
                     </Link>
                 </div>
