@@ -57,6 +57,7 @@
     margin: .4375rem 0 .4375rem;
     padding-right: 1rem;
     font-weight: 500;
+    font-family: 'Roboto', sans-serif;
 }
 
 .product-index-price {
@@ -65,11 +66,14 @@
     margin: 0 0 .9375rem;
     text-align: center;
     border: 4px;
+    font-family: 'Roboto', sans-serif;
 }
 
 .product-item-text {
     display: flex;
     flex-direction: column;
     text-align: center;
+    font-family: 'Roboto', sans-serif;
+    color: gray;
     // margin-left: 50px;
 }

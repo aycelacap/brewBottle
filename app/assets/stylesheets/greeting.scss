@@ -5,95 +5,230 @@
     float: left;
 }
 
-.header-group {
-  font-size: 13px;
-  background-color: #ffffff;
-  list-style: none;
-  margin: 0px;
-  padding: 0px;
-  width: 100%;
-  overflow: hidden;
-  // display: inline-block;
+.navbar a {
+    text-decoration: none;
+    color: darkgrey
 }
 
-
-.header-group Link:hover {
+.navbar a:hover {
+    text-decoration: none;
     color: #01a1dd;
+    border-bottom: 2px solid
 }
 
-
-
-.header-group p {
-    padding: 30px
-}
-
-.header-group a {
-  float: left;
-  font-size: 16px;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
-
-.header-group a:active {
-  color: #01a1dd
-}
-
-.dropdown {
-    float: left;
+.navbar {
+    width: 100%;
     overflow: hidden;
+    padding-block: 10px;
+    font-family: 'Roboto', sans-serif;
 }
 
-#left-nav {
-    text-decoration: none;
-    color: black;
+.right-nav {
+    float: right;
+    padding: 20px;
+    margin-right: 100px;
+}
+
+.left-nav {
     float: left;
-    padding: 30px;
-}
-#right-nav {
-    text-decoration: none;
-    color: black;
-    float: right;
-    padding: 30px;
-    
-    // text-align: center;
-    // display: block;
+    padding: 20px;
 }
 
-.logout-button {
-    background: none;
-    float: right;
-    padding: 30px;
-    border: none;
-    cursor: pointer;
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 16px;
-}
 
-.dropdown .dropbtn {
-  font-size: 16px;
-  border: none;
-  outline: none;
-  color: white;
-  padding: 14px 16px;
-  background-color: inherit;
-  font-family: inherit;
-}
 
-.header-group a:hover, .dropdown:hover .dropbtn {
-  color: #01a1dd;
-}
 
-// .personal-greeting {
-//   text-decoration: none;
-//   color: black;
-//   float: center;
-//   padding: 30px;
-//   text-align: center;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// .navbar-logo {
+//     cursor: pointer;
+//     width: 50px;
+//     height: 55px;
+//     float: left;
+// }
+
+// .header-group {
+//   font-size: 13px;
+//   background-color: #ffffff;
+//   list-style: none;
+//   margin: 0px;
+//   padding: 0px;
+//   width: 100%;
+//   overflow: hidden;
+//   // display: inline-block;
+// }
+
+
+// .header-group Link:hover {
+//     color: #01a1dd;
+// }
+
+
+
+// .header-group p {
+//     padding: 30px
+// }
+
+// .header-group a {
+//   float: left;
 //   font-size: 16px;
+//   color: white;
+//   text-align: center;
+//   padding: 14px 16px;
+//   text-decoration: none;
 // }
 
-// .logged-in-right > #right-nav{
-//   justify-content: center;
+// .header-group a:active {
+//   color: #01a1dd
 // }
+
+// .dropdown {
+//     float: left;
+//     overflow: hidden;
+// }
+
+// #left-nav {
+//     text-decoration: none;
+//     color: black;
+//     float: left;
+//     padding: 30px;
+// }
+// #right-nav {
+//     text-decoration: none;
+//     color: black;
+//     float: right;
+//     padding: 30px;
+    
+//     // text-align: center;
+//     // display: block;
+// }
+
+// .logout-button {
+//     background: none;
+//     float: right;
+//     padding: 30px;
+//     border: none;
+//     cursor: pointer;
+//     font-family: 'Times New Roman', Times, serif;
+//     font-size: 16px;
+// }
+
+// .dropdown .dropbtn {
+//   font-size: 16px;
+//   border: none;
+//   outline: none;
+//   color: white;
+//   padding: 14px 16px;
+//   background-color: inherit;
+//   font-family: inherit;
+// }
+
+// .header-group a:hover, .dropdown:hover .dropbtn {
+//   color: #01a1dd;
+// }
+
+// // .personal-greeting {
+// //   text-decoration: none;
+// //   color: black;
+// //   float: center;
+// //   padding: 30px;
+// //   text-align: center;
+// //   font-size: 16px;
+// // }
+
+// // .logged-in-right > #right-nav{
+// //   justify-content: center;
+// // }

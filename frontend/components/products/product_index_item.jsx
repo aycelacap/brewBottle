@@ -19,7 +19,7 @@ const ProductIndexItem = ({ product }) => {
                         {product.name}
                     </div>
                     <div className='product-item-price'>
-                        ${product.price} USD
+                        ${product.price}
                     </div>
                 </div>
             </div>
