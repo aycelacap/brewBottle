@@ -16,7 +16,8 @@ const Greeting = ({ currentUser, logout }) => {
               &nbsp;   &nbsp;
               <Link to="/">VISIT</Link>
               &nbsp;   &nbsp;
-              <Link to="/">LEARN</Link>
+              {/* <Link to="/">LEARN</Link> */}
+        <a href="https://www.appacademy.io/">LEARN</a>
         </div>
 
         {/* right nav below */}
@@ -49,7 +50,8 @@ const Greeting = ({ currentUser, logout }) => {
               &nbsp;   &nbsp;
               <Link to="/">VISIT</Link>
               &nbsp;   &nbsp;
-              <Link to="/">LEARN</Link>
+              {/* <Link to="/">LEARN</Link> */}
+        <a href="https://www.appacademy.io/">LEARN</a>
       </div>
         {/* right nav */}
 
