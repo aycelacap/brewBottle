@@ -7,7 +7,7 @@
 
 .navbar a {
     text-decoration: none;
-    color: darkgrey
+    color: grey
 }
 
 .navbar a:hover {
@@ -26,7 +26,12 @@
 .right-nav {
     float: right;
     padding: 20px;
-    margin-right: 100px;
+    margin-right: 10px;
+    width: 400px;
+}
+
+.right-nav:before {
+    width: 300px;
 }
 
 .left-nav {
@@ -34,8 +39,43 @@
     padding: 20px;
 }
 
+.fa-shopping-cart {
+    color:darkgrey;
+    font-size: 20px;
+}
 
+.header-name {
+    color: #01a1dd;
+    justify-content: space-between;
+    margin: 0px;
+    display: inline-block;
+    padding-right: 30px;
+}
 
+.logout-button {
+    text-decoration: none;
+    background: none;
+    border: none;
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+    color: grey;
+    cursor: pointer;
+}
+
+.logout-button:hover {
+    color: #01a1dd;
+    border-bottom: 2px solid
+}
+
+.amurica {
+    height: 15px;
+    width: 19px;
+    margin-left: 20px;
+}
+
+// .amurica:hover {
+
+// }
 
 
 

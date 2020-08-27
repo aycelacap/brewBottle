@@ -36,12 +36,13 @@
     box-shadow: 0 0 3px 0 rgba(0,0,0,0.3);
     font-size: 14px; 
     text-align: center;
+    margin-top: 10px;
 }
 
 .labels {
     font-family: sans-serif;
-    padding-bottom: 10px;
-    margin-bottom: 5px;
+    padding-bottom: 20px;
+    margin-bottom: 15px;
 }
 
 .session-submit {
@@ -55,6 +56,15 @@
     text-decoration: none;
 }
 
-// .login-form dropdown-signup {
+.login-form-box {
+    text-align: center;
+}
 
-// }
+.session-link {
+    text-decoration: none;
+    color: #01a1dd;
+}
+
+.session-link:hover {
+    text-decoration: underline;
+}

@@ -21,36 +21,6 @@ Product.destroy_all
 require 'open-uri'
 demo1 = User.create!(email: "caffeinated@brewbottle.cafe", first_name: "Caffeinated", last_name: "Brew", password: "hunter12")
 
-product1 = Product.create!(category_id: 100, name: "Chemex", description: "Made from borosilicate glass and fastened with a wood collar and tie, the Chemex Coffeemaker brews without imparting any flavors of its own.", item_type: "coffee supply", price: 39.99)
-
-file100 = open('https://brewbottle-seeds.s3-us-west-1.amazonaws.com/chemex.jpg')
-file101 = open('https://brewbottle-seeds.s3-us-west-1.amazonaws.com/chemexHipster1.jpg')
-
-product1.photos.attach(io: file100, filename: 'chemex.jpg')
-product1.photos.attach(io: file101, filename: 'chemexHipster.jpg')
-
-# P2
-
-product2 = Product.create!(category_id: 105, name: "Five-Pack Dark Cold Brew", description: "Our darkest blend, comprising organic coffees from Uganda, Papua New Guinea, and Sumatra, is downright viscous in the cup. Just like Coltrane’s ability to cascade into high-pitched octaves with maximum control, this coffee’s inflections of stone fruit lighten without losing focus. Improvisations of milk or cream—in any proportion—shine.", item_type: "consumption", price: 24.99)
-
-file200 = open('https://brewbottle-seeds.s3-us-west-1.amazonaws.com/five-pack.jpg')
-file201 = open('https://brewbottle-seeds.s3-us-west-1.amazonaws.com/five-pack2.jpg')
-
-product2.photos.attach(io: file200, filename: 'five-pack.jpg')
-product2.photos.attach(io: file201, filename: 'five-pack2.jpg')
-
-# P3
-
-product3 = Product.create!(category_id: 105, name: "Colombia Popayán Fall Harvest", description: "From the coffee-growing region near the western Colombian city of Popayán, this single origin delivers the chocolate and brown-sugar notes of Latin America along with a delicious complexity and a mix of citrusy and apple-like acidity.", item_type: "consumption", price: 15.99)
-
-file300 = open('https://brewbottle-seeds.s3-us-west-1.amazonaws.com/coffeeBeanBag1.jpg')
-file301 = open('https://brewbottle-seeds.s3-us-west-1.amazonaws.com/coffeeBeanBag2.jpg')
-
-product3.photos.attach(io: file300, filename: 'coffeeBeanBag1.jpg')
-product3.photos.attach(io: file301, filename: 'coffeeBeanBag2.jpg')
-
-# P4
-
 product4 = Product.create!(category_id: 105, name: "Opascope Espresso", description: "Opascope Espresso is a refreshing addition to a lineup once dominated by dense, chocolatey selections. It yields an effervescent shot, packed with stripes of tropicalia.", item_type: "consumption", price: 24.99)
 
 file400 = open('https://brewbottle-seeds.s3-us-west-1.amazonaws.com/espresso1O.jpg')
@@ -59,8 +29,8 @@ file401 = open('https://brewbottle-seeds.s3-us-west-1.amazonaws.com/espresso2O.j
 product4.photos.attach(io: file400, filename: 'espresso1O.jpg')
 product4.photos.attach(io: file401, filename: 'espresso2O.jpg')
 
-# P5
 
+# P2
 product5 = Product.create!(category_id: 105, name: "Classic Blend Granola with Your Choice of a Blue Bottle Coffee Blend", description: "At Blue Bottle, we don’t necessarily believe in reinvention. Instead, we’re more about refining familiar comforts so they reach new heights. To wit, we bake our 
 Classic Granola slowly with warm spices and both maple syrup and brown sugar, so it tastes richer, with a more satisfying crunch than any other granola we’ve ever tried. For our whole-bean coffee blends, we bring together high-quality, organic coffee so they create consistently delicious, harmonious cups, tasting better than you ever thought your morning coffee could.
 Because we love how coffee draws out granola’s flavors, we’re offering them together. Try the granola Blue Bottle cafe style, with steamed milk. You can also enjoy it over yogurt or as a snack on its own. Either way, try it with a cup of coffee on the side.", item_type: "consumption", price: 27)
@@ -71,7 +41,36 @@ file501 = open('https://brewbottle-seeds.s3-us-west-1.amazonaws.com/granola2.jpg
 product5.photos.attach(io: file500, filename: 'granola1.jpg')
 product5.photos.attach(io: file501, filename: 'granola2.jpg')
 
+
+# P3
+
+product39 = Product.create!(category_id: 100, name: "Blue Bottle x Fellow Electric Kettle", description: "We worked with San Francisco-based coffee tools designer Fellow to create this custom kettle, crafted in our signature Fog Grey, to evoke the calming tones of our cafes. With twelve hundred watts, it brings water to the desired temperature quickly, and its hold mode sustains that temperature for up to an hour. Its swan neck and maple handle gives you full control over the speed and volume of your pour. And the built-in timer tracks your brew time without the hassle of a stopwatch. All of that is controlled by a single knob, which makes the kettle a streamlined joy to use.", item_type: "coffee supply", price: 195)
+
+file390 = open('https://brewbottle-seeds.s3-us-west-1.amazonaws.com/kettle1.jpg')
+file391 = open('https://brewbottle-seeds.s3-us-west-1.amazonaws.com/kettle2.jpg')
+product39.photos.attach(io: file390, filename: "kettle1.jpg")
+product39.photos.attach(io: file391, filename: "kettle2.jpg")
+
+# P4
+
+product3 = Product.create!(category_id: 105, name: "Colombia Popayán Fall Harvest", description: "From the coffee-growing region near the western Colombian city of Popayán, this single origin delivers the chocolate and brown-sugar notes of Latin America along with a delicious complexity and a mix of citrusy and apple-like acidity.", item_type: "consumption", price: 15.99)
+
+file300 = open('https://brewbottle-seeds.s3-us-west-1.amazonaws.com/coffeeBeanBag1.jpg')
+file301 = open('https://brewbottle-seeds.s3-us-west-1.amazonaws.com/coffeeBeanBag2.jpg')
+
+product3.photos.attach(io: file300, filename: 'coffeeBeanBag1.jpg')
+product3.photos.attach(io: file301, filename: 'coffeeBeanBag2.jpg')
+
+# P5
+
+
+
+
 # P6
+
+
+
+# P7
 
 product6 = Product.create!(category_id: 105, name: "Blend Box", description: "Our blends are carefully chosen from two or three coffees for their harmonious relationship in the cup. Roasted with desired flavor profiles in mind, each blend combines varying regions, climates, and processing methods to arrive at something that’s as comforting as an old friend, but flushed with the excitement of first love.", item_type: "consumption", price: 35)
 
@@ -81,7 +80,7 @@ file601 = open('https://brewbottle-seeds.s3-us-west-1.amazonaws.com/beans2.jpg')
 product6.photos.attach(io: file600, filename: 'beans1.jpg')
 product6.photos.attach(io: file601, filename: 'beans2.jpg')
 
-# P7
+
 
 product7 = Product.create!(category_id: 105, name: "Espresso Set", description: "While you can use any coffee to make espresso, we created these blends specifically for using with this potent brew method. From the fruity Opascope to the chocolatey Hayes Valley, these showcase the spectrum of what this drink can be.", item_type: "consumption", price: 36)
 
@@ -182,6 +181,16 @@ file271 = open('https://brewbottle-seeds.s3-us-west-1.amazonaws.com/japMug2.jpg'
 product27.photos.attach(io: file270, filename: "japMug1.jpg")
 product27.photos.attach(io: file271, filename: "japMug2.jpg")
 
+# 
+
+product1 = Product.create!(category_id: 100, name: "Chemex", description: "Made from borosilicate glass and fastened with a wood collar and tie, the Chemex Coffeemaker brews without imparting any flavors of its own.", item_type: "coffee supply", price: 39.99)
+
+file100 = open('https://brewbottle-seeds.s3-us-west-1.amazonaws.com/chemex.jpg')
+file101 = open('https://brewbottle-seeds.s3-us-west-1.amazonaws.com/chemexHipster1.jpg')
+
+product1.photos.attach(io: file100, filename: 'chemex.jpg')
+product1.photos.attach(io: file101, filename: 'chemexHipster.jpg')
+
 # product28 = Product.create!(category_id: 100, name: "Blue Bottle Pour Over Kit", description: "Our Pour Over Kit gives you the tools and expertise you need to enjoy Blue Bottle cafe-quality coffee at home. If you’ve never tried our method before, brewing coffee with the Blue Bottle pour-over method is like switching from a butter knife to a Japanese cleaver: The coffee comes out clearer, cleaner, more fundamentally itself.", item_type: "coffee supply", price: 59)
 
 # product29 = Product.create!(category_id: 100, name: "Blue Bottle Coffee Filters", description: "Our proprietary filters are made just for the Blue Bottle Coffee Dripper. They require no pre-wetting before use and impart no papery taste to the final cup.", item_type: "coffee supply", price: 15)
@@ -208,12 +217,7 @@ product27.photos.attach(io: file271, filename: "japMug2.jpg")
 
 # product38 = Product.create!(category_id: 100, name: "Takahiro Pour Over Kettle", description: "What a sports car is on the road, this kettle is in your hands: silky, responsive, and inimitably stylish. Handmade in Japan, this kettle has a cult following among Japanese baristas and devoted home brewers around the world. The graceful swan neck spout allows you precise control over your flow—necessary for the most expressive pour over.", item_type: "coffee supply", price: 135)
 
-product39 = Product.create!(category_id: 100, name: "Blue Bottle x Fellow Electric Kettle", description: "We worked with San Francisco-based coffee tools designer Fellow to create this custom kettle, crafted in our signature Fog Grey, to evoke the calming tones of our cafes. With twelve hundred watts, it brings water to the desired temperature quickly, and its hold mode sustains that temperature for up to an hour. Its swan neck and maple handle gives you full control over the speed and volume of your pour. And the built-in timer tracks your brew time without the hassle of a stopwatch. All of that is controlled by a single knob, which makes the kettle a streamlined joy to use.", item_type: "coffee supply", price: 195)
 
-file390 = open('https://brewbottle-seeds.s3-us-west-1.amazonaws.com/kettle1.jpg')
-file391 = open('https://brewbottle-seeds.s3-us-west-1.amazonaws.com/kettle2.jpg')
-product39.photos.attach(io: file390, filename: "kettle1.jpg")
-product39.photos.attach(io: file391, filename: "kettle2.jpg")
 
 # product40 = Product.create!(category_id: 100, name: "Tsuki Usagi Jirushi Slim Pot", description: "Another kettle! We like this one as much as the Hario Buono, or maybe a touch more. It's beautifully made, holds a little less water (about 0.7 liters), and, unlike the Buono, is not suitable for heating water directly on the stove. But it's delightfully compact and, in the right hands, has a very silky pour.", item_type: "coffee supply", price: 60)
 
@@ -225,6 +229,14 @@ product41.photos.attach(io: file410, filename: "sfPricedKettle.jpg")
 product41.photos.attach(io: file411, filename: "sfPricedKettle2.jpg")
 
 # product42 = Product.create!(category_id: 100, name: "Wood-Handled Pouring Kettle", description: "We like this kettle as much or perhaps a little more than the Hario Buono Kettle. Sturdily built in Japan, it's just the ticket for making a pour-over or Chemex. Not recommended for direct heating over a gas flame. It holds approximately 1 liter.", item_type: "coffee supply", price: 60)
+
+product2 = Product.create!(category_id: 105, name: "Five-Pack Dark Cold Brew", description: "Our darkest blend, comprising organic coffees from Uganda, Papua New Guinea, and Sumatra, is downright viscous in the cup. Just like Coltrane’s ability to cascade into high-pitched octaves with maximum control, this coffee’s inflections of stone fruit lighten without losing focus. Improvisations of milk or cream—in any proportion—shine.", item_type: "consumption", price: 24.99)
+
+file200 = open('https://brewbottle-seeds.s3-us-west-1.amazonaws.com/five-pack.jpg')
+file201 = open('https://brewbottle-seeds.s3-us-west-1.amazonaws.com/five-pack2.jpg')
+
+product2.photos.attach(io: file200, filename: 'five-pack.jpg')
+product2.photos.attach(io: file201, filename: 'five-pack2.jpg')
 
 # product43 = Product.create!(category_id: 100, name: "Fellow Stagg EKG Pour-Over Kettle", description: "Fellow designs kettles that make your morning ritual easier and more wondrous to behold. Their Stagg™ EKG Pour Over Kettle is an electric kettle ideal for a person who makes pour overs or French press and wants to get the most out of their machine: Twelve-hundred watts brings water up to the desired temperature quickly; a hold mode sustains temperature for up to an hour; and a built-in timer helps you brew the perfect cup of coffee—without the hassle of an additional timer or stopwatch.", item_type: "coffee supply", price: 149)
 

@@ -33,6 +33,13 @@ export const fetchProducts = () => dispatch => {
         error => dispatch(receiveProductErrors(error.responseJSON)))
 }
 
+// export const fetchProducts = () => async dispatch => {
+//     const response = await ProductApiUtil.fetchProducts();
+//     if (response.ok) {
+    //  dispatch(receiveProducts(response))
+//     
+// 
+
 export const fetchProductsByCategory = (category_id, name) => dispatch => {
     return ProductApiUtil.fetchProductsByName(category_id, name)
         .then(products => dispatch(receiveProducts(products)),

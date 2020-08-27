@@ -26,7 +26,8 @@ const Greeting = ({ currentUser, logout }) => {
               &nbsp;   &nbsp;
               <Link to="/">SUBSCRIBE</Link>
               &nbsp;   &nbsp;
-        <i class="fas fa-shopping-cart"></i>
+        <i className="fas fa-shopping-cart"></i>
+        <img className='amurica' src={window.usFlag} alt="" />
         </div>
     </nav>
   );
@@ -52,12 +53,13 @@ const Greeting = ({ currentUser, logout }) => {
         {/* right nav */}
 
         <div className="right-nav">
-      <h2 className="header-name">Hi, {currentUser.first_name}!</h2>
+      <p className="header-name">Hi, {currentUser.first_name}!</p>
       <Link to="/">SUBSCRIBE</Link>
       &nbsp;   &nbsp;
-      <button className="header-button" onClick={logout}>Log Out</button>
+      <button className="logout-button" onClick={logout}>LOG OUT</button>
       &nbsp;   &nbsp;
-      <i class="fas fa-shopping-cart"></i>
+      <i className="fas fa-shopping-cart"></i>
+        <img className='amurica' src={window.usFlag} alt="" />
       </div>
     </hgroup>
   );

@@ -25,8 +25,9 @@ class Product extends React.Component {
                     <div className='right-side-whole-container'>
                         <div className='main-product-description'>
                             <h1 className='product-name'>{product.name}</h1>
-                            <div className='product-price'>{product.price} USD</div>
+                            <div className='product-price'>{product.price}</div>
                             <p className='product-description'>{product.description}</p>
+                            <p className="add-to-cart">Add To Cart <i className="fas fa-shopping-cart"></i></p>
                         </div>
                     </div>
                 </div>

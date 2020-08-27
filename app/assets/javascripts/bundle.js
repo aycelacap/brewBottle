@@ -137,7 +137,13 @@ var fetchProducts = function fetchProducts() {
       return dispatch(receiveProductErrors(error.responseJSON));
     });
   };
-};
+}; // export const fetchProducts = () => async dispatch => {
+//     const response = await ProductApiUtil.fetchProducts();
+//     if (response.ok) {
+//  dispatch(receiveProducts(response))
+//     
+// 
+
 var fetchProductsByCategory = function fetchProductsByCategory(category_id, name) {
   return function (dispatch) {
     return _util_product_api_util__WEBPACK_IMPORTED_MODULE_0__["fetchProductsByName"](category_id, name).then(function (products) {
@@ -527,7 +533,11 @@ var Greeting = function Greeting(_ref) {
     }, "SIGN IN"), "\xA0   \xA0", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
       to: "/"
     }, "SUBSCRIBE"), "\xA0   \xA0", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-      "class": "fas fa-shopping-cart"
+      className: "fas fa-shopping-cart"
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+      className: "amurica",
+      src: window.usFlag,
+      alt: ""
     })));
   }; // once you sign in
 
@@ -550,15 +560,19 @@ var Greeting = function Greeting(_ref) {
       to: "/"
     }, "LEARN")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       className: "right-nav"
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
       className: "header-name"
     }, "Hi, ", currentUser.first_name, "!"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
       to: "/"
     }, "SUBSCRIBE"), "\xA0   \xA0", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-      className: "header-button",
+      className: "logout-button",
       onClick: logout
-    }, "Log Out"), "\xA0   \xA0", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-      "class": "fas fa-shopping-cart"
+    }, "LOG OUT"), "\xA0   \xA0", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+      className: "fas fa-shopping-cart"
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+      className: "amurica",
+      src: window.usFlag,
+      alt: ""
     })));
   };
 
@@ -1008,9 +1022,13 @@ var Product = /*#__PURE__*/function (_React$Component) {
         className: "product-name"
       }, product.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "product-price"
-      }, product.price, " USD"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+      }, product.price), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         className: "product-description"
-      }, product.description)))));
+      }, product.description), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        className: "add-to-cart"
+      }, "Add To Cart ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fas fa-shopping-cart"
+      }))))));
     }
   }]);
 
@@ -1128,7 +1146,8 @@ var mapStateToProps = function mapStateToProps(_ref) {
     formType: "Login",
     buttonMessage: "SIGN IN",
     navLink: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", null, "Don't have an account? ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
-      to: "/signup"
+      to: "/signup",
+      className: "session-link"
     }, "Sign Up"))
   };
 };
@@ -1527,7 +1546,8 @@ var mapStateToProps = function mapStateToProps(_ref) {
     formType: "Signup",
     buttonMessage: "SIGN UP",
     navLink: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", null, "Already have an account? ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
-      to: "/login"
+      to: "/login",
+      className: "session-link"
     }, "Sign In"))
   };
 };
