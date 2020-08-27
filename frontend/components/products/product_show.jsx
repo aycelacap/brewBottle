@@ -27,6 +27,7 @@ class Product extends React.Component {
                             <h1 className='product-name'>{product.name}</h1>
                             <div className='product-price'>{product.price}</div>
                             <p className='product-description'>{product.description}</p>
+                            {/* <a href="" className="add-to-cart">Add To Cart <i className="fas fa-shopping-cart"></a> */}
                             <p className="add-to-cart">Add To Cart <i className="fas fa-shopping-cart"></i></p>
                         </div>
                     </div>

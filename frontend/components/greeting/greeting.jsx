@@ -24,7 +24,8 @@ const Greeting = ({ currentUser, logout }) => {
         <div className="right-nav">
               <Link to="/login">SIGN IN</Link>
               &nbsp;   &nbsp;
-              <Link to="/">SUBSCRIBE</Link>
+              {/* <Link to="/">SUBSCRIBE</Link> */}
+        <a href="https://www.youtube.com/watch?v=djV11Xbc914">SUBSCRIBE</a>
               &nbsp;   &nbsp;
         <i className="fas fa-shopping-cart"></i>
         <img className='amurica' src={window.usFlag} alt="" />
@@ -54,7 +55,8 @@ const Greeting = ({ currentUser, logout }) => {
 
         <div className="right-nav">
       <p className="header-name">Hi, {currentUser.first_name}!</p>
-      <Link to="/">SUBSCRIBE</Link>
+      {/* <Link to="/">SUBSCRIBE</Link> */}
+        <a href="https://www.youtube.com/watch?v=djV11Xbc914">SUBSCRIBE</a>
       &nbsp;   &nbsp;
       <button className="logout-button" onClick={logout}>LOG OUT</button>
       &nbsp;   &nbsp;
