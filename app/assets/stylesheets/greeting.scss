@@ -7,7 +7,8 @@
 
 .navbar a {
     text-decoration: none;
-    color: grey
+    color: grey;
+    letter-spacing: 1.5px;
 }
 
 .navbar a:hover {
@@ -31,7 +32,7 @@
 }
 
 .right-nav:before {
-    width: 300px;
+    width: 00px;
 }
 
 .left-nav {
@@ -50,6 +51,7 @@
     margin: 0px;
     display: inline-block;
     padding-right: 30px;
+    // letter-spacing: 1.0px;
 }
 
 .logout-button {
@@ -73,9 +75,9 @@
     margin-left: 20px;
 }
 
-// .amurica:hover {
-
-// }
+.amurica:hover {
+    cursor: pointer;
+}
 
 
 

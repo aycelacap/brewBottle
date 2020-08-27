@@ -4,13 +4,17 @@ import { Link } from "react-router-dom";
 const Splash = () => {
     return (
       <div>
+        <nav className="blue-nav">
+          <p>Due to the health and safety of our emplyees, orders may take longer to arrive  | <Link to="/products" className="blue-nav-link"> SHOP NOW</Link></p>
+          <p>US stores now open for takeaway</p>
+        </nav>
         <img
           className="splash-image"
           src={window.kyotoBrewBottle}
         />
 
         <p className="quote-one">
-          LIFE HAPPENS, COFFEE HELPS
+          KYOTO, JAPAN
         </p>
 
         <div className='splash-page-main-container'>
