@@ -53,6 +53,16 @@ class ProductIndex extends React.Component {
                 {/* <button className='product-index-buttons' onClick={this.handleAllProduct}>
                     All
                 </button> */}
+                {/* <div className="productindex-buttons-container">
+                    <button className='product-index-buttons' onClick={this.handleGetProduct} value="100">
+                        Coffee
+                        </button>
+                    <button className='product-index-buttons' onClick={this.handleGetProduct} value="105">
+                        Coffee Supplies
+                    </button>
+                </div> */}
+                
+
                 <div className='productindex-wrapper'>
                     <ul className='product-index-item'>
                         {productIdx}

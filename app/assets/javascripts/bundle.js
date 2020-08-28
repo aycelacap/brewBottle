@@ -1625,7 +1625,7 @@ var Splash = function Splash() {
     alt: ""
   }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
     className: "quote"
-  }, "Motivational Coffee Quote Here"));
+  }, "Drink coffee to stay awake - sleepy Jordan"));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Splash); // other awesome photo:

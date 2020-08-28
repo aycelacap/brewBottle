@@ -32,7 +32,7 @@ const Splash = () => {
         </div>
 
          <p className="quote">
-           Motivational Coffee Quote Here
+           Drink coffee to stay awake - sleepy Jordan
          </p>
 
       </div>
