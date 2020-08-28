@@ -27,13 +27,14 @@
 .right-nav {
     float: right;
     padding: 20px;
-    margin-right: 10px;
-    width: 400px;
+    margin-right: 5px;
+    width: 500px;
+    text-align: center;
 }
 
-.right-nav:before {
-    width: 00px;
-}
+// .right-nav:before {
+//     width: 400px;
+// }
 
 .left-nav {
     float: left;
