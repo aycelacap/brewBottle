@@ -24,6 +24,7 @@ demo1 = User.create!(email: "caffeinated@brewbottle.cafe", first_name: "Caffeina
 product4 = Product.create!(category_id: 105, name: "Opascope Espresso", description: "Opascope Espresso is a refreshing addition to a lineup once dominated by dense, chocolatey selections. It yields an effervescent shot, packed with stripes of tropicalia.", item_type: "consumption", price: 24.99)
 
 file400 = open('https://brewbottle-seeds.s3-us-west-1.amazonaws.com/espresso1O.jpg')
+
 file401 = open('https://brewbottle-seeds.s3-us-west-1.amazonaws.com/espresso2O.jpg')
 
 product4.photos.attach(io: file400, filename: 'espresso1O.jpg')
@@ -54,7 +55,6 @@ product39.photos.attach(io: file391, filename: "kettle2.jpg")
 # P4
 
 product3 = Product.create!(category_id: 105, name: "Colombia Popayán Fall Harvest", description: "From the coffee-growing region near the western Colombian city of Popayán, this single origin delivers the chocolate and brown-sugar notes of Latin America along with a delicious complexity and a mix of citrusy and apple-like acidity.", item_type: "consumption", price: 15.99)
-
 file300 = open('https://brewbottle-seeds.s3-us-west-1.amazonaws.com/coffeeBeanBag1.jpg')
 file301 = open('https://brewbottle-seeds.s3-us-west-1.amazonaws.com/coffeeBeanBag2.jpg')
 
