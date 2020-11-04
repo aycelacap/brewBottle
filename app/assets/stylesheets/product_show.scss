@@ -10,17 +10,57 @@
 
 }
 
-.product-left-side-img {
-    
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    width: 30%;
-    height: auto;
-    margin: 14px;
-    padding-bottom: 100px;
-
+.right-side-product-index {
+    width: 100%;
+    height: 10%;
 }
+
+.productindex-buttons-container {
+    border: 1px solid #01a1dd;
+    margin-bottom: 1.8125rem;
+    height: auto;
+    display: flex;
+    justify-content: space-around;
+    background-color: #ffffff;
+    margin-top: .75rem;
+}
+
+.product-index-buttons {
+    border: none;
+    font-size: 1.12rem;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: 7px;
+    margin-bottom: 7px;
+    outline:none;
+    background-color:#ffffff;
+    border-bottom: 3px solid #ffffff;
+}
+
+.product-index-buttons:hover {
+    cursor: pointer;
+    border-bottom: 3px solid #01a1dd;
+    transition: all .35s ease-in-out;
+}
+
+.productindex-wrapper {
+    display: flex;
+    justify-content: space-evenly;
+    background-color: #fafafa;
+    margin-top: 4.688rem;
+}
+
+// .product-left-side-img {
+    
+//     display: flex;
+//     // flex-direction: column;
+//     justify-content: flex-end;
+//     width: 30%;
+//     height: auto;
+//     margin: 14px;
+//     padding-bottom: 100px;
+
+// }
 
 .show-pic:hover {
     transform: scale(1.25);
@@ -75,4 +115,42 @@
     font-family: 'Roboto', sans-serif;
     float: right;
     margin-right: 20px;
+}
+
+.product-index-item {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 900px;
+    margin: 0 auto;
+    border-top: 1px solid #e0e0e0;
+}
+
+.product-category {
+    width: 100%;
+}
+
+.product-category-links {
+    padding-bottom: 0.7%;
+    padding-top: 0.4%;
+    // border-bottom: 2px solid cadetblue;
+    background-color: #E5E5E5;
+}
+
+.product-category-links a {
+    text-decoration: none;
+    color: grey;
+    letter-spacing: 1.5px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.product-category-links a:hover {
+    text-decoration: none;
+    color: #01a1dd;
+    padding-bottom: 1px;
+    border-bottom: 2px solid
+}
+
+.product-category-links a:first-child {
+//   background-color: yellow;
+  margin-left: 13%;
 }

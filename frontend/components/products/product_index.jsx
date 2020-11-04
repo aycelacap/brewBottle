@@ -1,5 +1,6 @@
 import React from 'react';
 import ProductIndexItem from './product_index_item';
+import { Link } from "react-router-dom";
 
 class ProductIndex extends React.Component {
     constructor(props) {
@@ -49,28 +50,22 @@ class ProductIndex extends React.Component {
         });
 
         return (
-            <div>
-                {/* <button className='product-index-buttons' onClick={this.handleAllProduct}>
-                    All
-                </button> */}
-                {/* <div className="productindex-buttons-container">
-                    <button className='product-index-buttons' onClick={this.handleGetProduct} value="100">
-                        Coffee
-                        </button>
-                    <button className='product-index-buttons' onClick={this.handleGetProduct} value="105">
-                        Coffee Supplies
-                    </button>
-                </div> */}
-                
-
-                <div className='productindex-wrapper'>
-                    <ul className='product-index-item'>
-                        {productIdx}
-                    </ul>
-                    {/* <button className='product-index-buttons' onClick={this.handleGetProduct}></button> */}
-                </div>
-            </div>
-        )
+          <div>
+            <nav className="product-category">
+              <div className="product-category-links">
+                <Link to="/products">SHOP ALL</Link>
+                &nbsp; &nbsp;
+                <Link to="/products">COFFEE</Link>
+                &nbsp; &nbsp;
+                <Link to="/products">BREWING</Link>
+                &nbsp; &nbsp;
+                <Link to="/products">SEASONAL</Link>
+              </div>
+            </nav>
+            <ul className="product-index-item">{productIdx}</ul>
+            {/* <button className='product-index-buttons' onClick={this.handleGetProduct}></button> */}
+          </div>
+        );
     }
 }
 

@@ -31,10 +31,6 @@ const Splash = () => {
           </div>
         </div>
 
-         <p className="quote">
-           Drink coffee to stay awake - sleepy Jordan
-         </p>
-
       </div>
     );
 }

@@ -14,7 +14,7 @@ const mapStateToProps = ({ errors }) => {
 
     navLink: (
       <p>
-        Don't have an account? <Link to="/signup" className="session-link">Sign Up</Link>
+        Don't have an account yet? <Link to="/signup" className="session-link">Sign Up</Link>
       </p>
     ),
   };

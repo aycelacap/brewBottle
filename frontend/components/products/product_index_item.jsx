@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 const ProductIndexItem = ({ product }) => {
     // debugger
     return (
-        <li className='whole-page-wrapper'>
+            <li className='whole-page-wrapper'>
             <div className='whole-content-wrapper'>
                     <div className='product-index-item-container'>
                         <Link to={`/products/${product.id}`}>
@@ -23,8 +23,7 @@ const ProductIndexItem = ({ product }) => {
                         </div>
                     </div>
                 </div>
-            
-        </li>
+            </li>
     )
 }
 
