@@ -895,7 +895,9 @@ var mDTP = function mDTP(dispatch) {
     fetchProducts: function fetchProducts() {
       return dispatch(Object(_actions_product_actions__WEBPACK_IMPORTED_MODULE_2__["fetchProducts"])());
     },
-    // fetchProductsByCategory: (category_id) => dispatch(fetchProductsByCategory(category_id)),
+    fetchProductsByCategory: function fetchProductsByCategory(category_id) {
+      return dispatch(Object(_actions_product_actions__WEBPACK_IMPORTED_MODULE_2__["fetchProductsByCategory"])(category_id));
+    },
     fetchProduct: function (_fetchProduct) {
       function fetchProduct(_x) {
         return _fetchProduct.apply(this, arguments);
