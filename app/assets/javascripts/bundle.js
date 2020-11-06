@@ -796,7 +796,7 @@ var ProductIndex = /*#__PURE__*/function (_React$Component) {
       products: null
     }; //     // let's bind our helper functions
 
-    _this.handleGetProduct = _this.handleGetProduct.bind(_assertThisInitialized(_this)); //     // this.handleAllProduct = this.handleAllProduct.bind(this)
+    _this.handleGetProducts = _this.handleGetProducts.bind(_assertThisInitialized(_this)); //     // this.handleAllProduct = this.handleAllProduct.bind(this)
 
     return _this;
   }
@@ -813,8 +813,8 @@ var ProductIndex = /*#__PURE__*/function (_React$Component) {
       });
     }
   }, {
-    key: "handleGetProduct",
-    value: function handleGetProduct(e) {
+    key: "handleGetProducts",
+    value: function handleGetProducts(e) {
       e.preventDefault();
       var id = e.currentTarget.value;
       return this.props.fetchProduct(id);

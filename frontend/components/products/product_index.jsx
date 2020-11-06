@@ -12,7 +12,7 @@ class ProductIndex extends React.Component {
 
 
     //     // let's bind our helper functions
-        this.handleGetProduct = this.handleGetProduct.bind(this);
+        this.handleGetProducts = this.handleGetProducts.bind(this);
     //     // this.handleAllProduct = this.handleAllProduct.bind(this)
 
     }
@@ -23,7 +23,7 @@ class ProductIndex extends React.Component {
         this.props.fetchProducts().then(products => this.setState({products}))
     }
 
-    handleGetProduct(e) {
+    handleGetProducts(e) {
         e.preventDefault();
         const id = e.currentTarget.value 
         return(
