@@ -6,7 +6,8 @@ import ProductIndex from './product_index'
 const mSTP = state => {
     // debugger
     return {
-        products: Object.values(state.entities.products)
+        products: Object.values(state.entities.products),
+        category: 
     }
 };
 
@@ -17,5 +18,6 @@ const mDTP = dispatch => {
         fetchProduct: (id) => dispatch(fetchProduct(id))
     }
 }
+
 
 export default connect(mSTP, mDTP)(ProductIndex)

@@ -7,21 +7,29 @@ class ProductIndex extends React.Component {
         super(props)
 
         this.state = {
-            products: null
+            products: null,
+            category: null,
         }
 
 
     //     // let's bind our helper functions
         this.handleGetProducts = this.handleGetProducts.bind(this);
-    //     // this.handleAllProduct = this.handleAllProduct.bind(this)
+    //     // this.handleGetProducts = this.handleAllProduct.bind(this)
 
     }
 
     
 
     componentDidMount() {
-        this.props.fetchProducts().then(products => this.setState({products}))
+        this.props.fetchProducts().then(products => this.setState({products}));
     }
+
+    componentDidUpdate(prevProps, prevState) {
+        // compare with prev
+        // this.props.
+    };
+
+    // on the onClick, change the state
 
     handleGetProducts(e) {
         e.preventDefault();
@@ -31,10 +39,15 @@ class ProductIndex extends React.Component {
         )         
     }
 
-    // handleAllProduct(e) {
-    //     e.preventDefault()
-    //     return this.props.fetchProducts()
-    // }
+    // try this for category
+    handleSomeProduct(e) {
+        e.preventDefault()
+        let category_id = e.currentTarget.value
+        return (
+            this.props.fetchProductsByCategory(category_id)
+            )
+    }
+    // try this
 
     render () {
         // const { products } = this.state
@@ -53,6 +66,9 @@ class ProductIndex extends React.Component {
           <div>
             <nav className="product-category">
               <div className="product-category-links">
+                  {/* turn these links into buttons
+                  onClick will set the state to the category
+                  based on the category,  */}
                 <Link to="/products">SHOP ALL</Link>
                 &nbsp; &nbsp;
                 <Link to="/products">COFFEE</Link>
