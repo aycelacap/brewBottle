@@ -19,5 +19,6 @@ const mDTP = dispatch => {
     }
 }
 
+// hja
 
 export default connect(mSTP, mDTP)(ProductIndex)
