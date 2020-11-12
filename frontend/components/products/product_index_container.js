@@ -7,18 +7,16 @@ const mSTP = state => {
     // debugger
     return {
         products: Object.values(state.entities.products),
-        category: 
+        // category: 
     }
 };
 
 const mDTP = dispatch => {
     return {
         fetchProducts: () => dispatch(fetchProducts()),
-        fetchProductsByCategory: (category_id) => dispatch(fetchProductsByCategory(category_id)),
+        fetchProductsByCategory: (item_type) => dispatch(fetchProductsByCategory(item_type)),
         fetchProduct: (id) => dispatch(fetchProduct(id))
     }
 }
-
-// hja
 
 export default connect(mSTP, mDTP)(ProductIndex)

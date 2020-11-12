@@ -1,5 +1,6 @@
 import React from 'react';
 import ProductIndexItem from './product_index_item';
+// import ProductIndex from './product_index_container'
 import { Link } from "react-router-dom";
 
 class ProductIndex extends React.Component {
@@ -13,8 +14,9 @@ class ProductIndex extends React.Component {
 
 
     //     // let's bind our helper functions
+        // THIS BIND handles all categories
         this.handleGetProducts = this.handleGetProducts.bind(this);
-    //     // this.handleGetProducts = this.handleAllProduct.bind(this)
+        this.handleCategory = this.handleCategory.bind(this);
 
     }
 
@@ -40,7 +42,9 @@ class ProductIndex extends React.Component {
     }
 
     // try this for category
-    handleSomeProduct(e) {
+    // item_type: "consumption", category_id: 105
+    // item_type: "coffee supply", category_id: 100
+    handleCategory(e) {
         e.preventDefault()
         let category_id = e.currentTarget.value
         return (
@@ -48,6 +52,11 @@ class ProductIndex extends React.Component {
             )
     }
     // try this
+
+    handleAllProduct(e) {
+        e.preventDefault()
+        return this.props.fetchProducts();
+    }
 
     render () {
         // const { products } = this.state
@@ -65,18 +74,20 @@ class ProductIndex extends React.Component {
         return (
           <div>
             <nav className="product-category">
-              <div className="product-category-links">
-                  {/* turn these links into buttons
-                  onClick will set the state to the category
-                  based on the category,  */}
-                <Link to="/products">SHOP ALL</Link>
-                &nbsp; &nbsp;
-                <Link to="/products">COFFEE</Link>
-                &nbsp; &nbsp;
-                <Link to="/products">BREWING</Link>
-                &nbsp; &nbsp;
-                <Link to="/products">SEASONAL</Link>
-              </div>
+              <div className="productindex-buttons-container">
+                        <button className='product-index-buttons' onClick={this.handleGetProducts}>
+                            SHOP ALL
+                        </button>
+                        <button className='product-index-buttons' onClick={this.handleCategory} value="105">
+                            COFFEE
+                        </button>
+                        <button className='product-index-buttons' onClick={this.handleCategory} value="100">
+                            BREWING
+                        </button>
+                        <button className='product-index-buttons' onClick={this.handleCategory} value="250">
+                            SEASONAL
+                        </button>
+                    </div>  
             </nav>
             <ul className="product-index-item">{productIdx}</ul>
             {/* <button className='product-index-buttons' onClick={this.handleGetProduct}></button> */}
@@ -89,3 +100,17 @@ export default ProductIndex;
 
 // todo:
 // ask about warning = unique key in render 
+
+
+//  <div className="product-category-links">
+//                   {/* turn these links into buttons
+//                   onClick will set the state to the category
+//                   based on the category,  */}
+//                 <Link to="/products">SHOP ALL</Link>
+//                 &nbsp; &nbsp;
+//                 <Link to="/products">COFFEE</Link>
+//                 &nbsp; &nbsp;
+//                 <Link to="/products">BREWING</Link>
+//                 &nbsp; &nbsp;
+//                 <Link to="/products">SEASONAL</Link>
+// </div>

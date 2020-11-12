@@ -144,9 +144,9 @@ var fetchProducts = function fetchProducts() {
 //     
 // 
 
-var fetchProductsByCategory = function fetchProductsByCategory(category_id, name) {
+var fetchProductsByCategory = function fetchProductsByCategory(item_type, name) {
   return function (dispatch) {
-    return _util_product_api_util__WEBPACK_IMPORTED_MODULE_0__["fetchProductsByName"](category_id, name).then(function (products) {
+    return _util_product_api_util__WEBPACK_IMPORTED_MODULE_0__["fetchProductsByName"](item_type, name).then(function (products) {
       return dispatch(receiveProducts(products));
     }, function (error) {
       return dispatch(receiveProductErrors(error.responseJSON));
@@ -742,14 +742,265 @@ var mDTP = function mDTP(dispatch) {
 
 /***/ }),
 
+/***/ "./frontend/components/products/product_index.jsx":
+/*!********************************************************!*\
+  !*** ./frontend/components/products/product_index.jsx ***!
+  \********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _product_index_item__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./product_index_item */ "./frontend/components/products/product_index_item.jsx");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+
+ // import ProductIndex from './product_index_container'
+
+
+
+var ProductIndex = /*#__PURE__*/function (_React$Component) {
+  _inherits(ProductIndex, _React$Component);
+
+  var _super = _createSuper(ProductIndex);
+
+  function ProductIndex(props) {
+    var _this;
+
+    _classCallCheck(this, ProductIndex);
+
+    _this = _super.call(this, props);
+    _this.state = {
+      products: null,
+      category: null
+    }; //     // let's bind our helper functions
+    // THIS BIND handles all categories
+
+    _this.handleGetProducts = _this.handleGetProducts.bind(_assertThisInitialized(_this));
+    _this.handleCategory = _this.handleCategory.bind(_assertThisInitialized(_this));
+    return _this;
+  }
+
+  _createClass(ProductIndex, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      var _this2 = this;
+
+      this.props.fetchProducts().then(function (products) {
+        return _this2.setState({
+          products: products
+        });
+      });
+    }
+  }, {
+    key: "componentDidUpdate",
+    value: function componentDidUpdate(prevProps, prevState) {// compare with prev
+      // this.props.
+    }
+  }, {
+    key: "handleGetProducts",
+    // on the onClick, change the state
+    value: function handleGetProducts(e) {
+      e.preventDefault();
+      var id = e.currentTarget.value;
+      return this.props.fetchProduct(id);
+    } // try this for category
+    // item_type: "consumption", category_id: 105
+    // item_type: "coffee supply", category_id: 100
+
+  }, {
+    key: "handleCategory",
+    value: function handleCategory(e) {
+      e.preventDefault();
+      var category_id = e.currentTarget.value;
+      return this.props.fetchProductsByCategory(category_id);
+    } // try this
+
+  }, {
+    key: "handleAllProduct",
+    value: function handleAllProduct(e) {
+      e.preventDefault();
+      return this.props.fetchProducts();
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      // const { products } = this.state
+      if (!this.props.products) return null; // debugger
+
+      var productIdx = this.props.products.map(function (product) {
+        // we need to make a single product presentational component to single out the products from the index 
+        // therefore, we iterating through
+        // debugger 
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_product_index_item__WEBPACK_IMPORTED_MODULE_1__["default"], {
+          product: product,
+          key: product.id
+        });
+      });
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
+        className: "product-category"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "productindex-buttons-container"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "product-index-buttons",
+        onClick: this.handleGetProducts
+      }, "SHOP ALL"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "product-index-buttons",
+        onClick: this.handleCategory,
+        value: "105"
+      }, "COFFEE"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "product-index-buttons",
+        onClick: this.handleCategory,
+        value: "100"
+      }, "BREWING"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "product-index-buttons",
+        onClick: this.handleCategory,
+        value: "250"
+      }, "SEASONAL"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+        className: "product-index-item"
+      }, productIdx));
+    }
+  }]);
+
+  return ProductIndex;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+
+/* harmony default export */ __webpack_exports__["default"] = (ProductIndex); // todo:
+// ask about warning = unique key in render 
+//  <div className="product-category-links">
+//                   {/* turn these links into buttons
+//                   onClick will set the state to the category
+//                   based on the category,  */}
+//                 <Link to="/products">SHOP ALL</Link>
+//                 &nbsp; &nbsp;
+//                 <Link to="/products">COFFEE</Link>
+//                 &nbsp; &nbsp;
+//                 <Link to="/products">BREWING</Link>
+//                 &nbsp; &nbsp;
+//                 <Link to="/products">SEASONAL</Link>
+// </div>
+
+/***/ }),
+
 /***/ "./frontend/components/products/product_index_container.js":
 /*!*****************************************************************!*\
   !*** ./frontend/components/products/product_index_container.js ***!
   \*****************************************************************/
 /*! exports provided: default */
-/***/ (function(module, exports) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: /Users/aycelacap/Desktop/brewBottle/frontend/components/products/product_index_container.js: Unexpected token (11:4)\n\n\u001b[0m \u001b[90m  9 | \u001b[39m        products\u001b[33m:\u001b[39m \u001b[33mObject\u001b[39m\u001b[33m.\u001b[39mvalues(state\u001b[33m.\u001b[39mentities\u001b[33m.\u001b[39mproducts)\u001b[33m,\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 10 | \u001b[39m        category\u001b[33m:\u001b[39m \u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 11 | \u001b[39m    }\u001b[0m\n\u001b[0m \u001b[90m    | \u001b[39m    \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 12 | \u001b[39m}\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 13 | \u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 14 | \u001b[39m\u001b[36mconst\u001b[39m mDTP \u001b[33m=\u001b[39m dispatch \u001b[33m=>\u001b[39m {\u001b[0m\n    at Object._raise (/Users/aycelacap/Desktop/brewBottle/node_modules/@babel/parser/lib/index.js:764:17)\n    at Object.raiseWithData (/Users/aycelacap/Desktop/brewBottle/node_modules/@babel/parser/lib/index.js:757:17)\n    at Object.raise (/Users/aycelacap/Desktop/brewBottle/node_modules/@babel/parser/lib/index.js:751:17)\n    at Object.unexpected (/Users/aycelacap/Desktop/brewBottle/node_modules/@babel/parser/lib/index.js:8927:16)\n    at Object.parseExprAtom (/Users/aycelacap/Desktop/brewBottle/node_modules/@babel/parser/lib/index.js:10227:20)\n    at Object.parseExprAtom (/Users/aycelacap/Desktop/brewBottle/node_modules/@babel/parser/lib/index.js:4686:20)\n    at Object.parseExprSubscripts (/Users/aycelacap/Desktop/brewBottle/node_modules/@babel/parser/lib/index.js:9789:23)\n    at Object.parseUpdate (/Users/aycelacap/Desktop/brewBottle/node_modules/@babel/parser/lib/index.js:9769:21)\n    at Object.parseMaybeUnary (/Users/aycelacap/Desktop/brewBottle/node_modules/@babel/parser/lib/index.js:9758:17)\n    at Object.parseExprOps (/Users/aycelacap/Desktop/brewBottle/node_modules/@babel/parser/lib/index.js:9628:23)\n    at Object.parseMaybeConditional (/Users/aycelacap/Desktop/brewBottle/node_modules/@babel/parser/lib/index.js:9602:23)\n    at Object.parseMaybeAssign (/Users/aycelacap/Desktop/brewBottle/node_modules/@babel/parser/lib/index.js:9565:21)\n    at Object.parseObjectProperty (/Users/aycelacap/Desktop/brewBottle/node_modules/@babel/parser/lib/index.js:10760:101)\n    at Object.parseObjPropValue (/Users/aycelacap/Desktop/brewBottle/node_modules/@babel/parser/lib/index.js:10785:100)\n    at Object.parsePropertyDefinition (/Users/aycelacap/Desktop/brewBottle/node_modules/@babel/parser/lib/index.js:10716:10)\n    at Object.parseObjectLike (/Users/aycelacap/Desktop/brewBottle/node_modules/@babel/parser/lib/index.js:10609:25)\n    at Object.parseExprAtom (/Users/aycelacap/Desktop/brewBottle/node_modules/@babel/parser/lib/index.js:10143:23)\n    at Object.parseExprAtom (/Users/aycelacap/Desktop/brewBottle/node_modules/@babel/parser/lib/index.js:4686:20)\n    at Object.parseExprSubscripts (/Users/aycelacap/Desktop/brewBottle/node_modules/@babel/parser/lib/index.js:9789:23)\n    at Object.parseUpdate (/Users/aycelacap/Desktop/brewBottle/node_modules/@babel/parser/lib/index.js:9769:21)\n    at Object.parseMaybeUnary (/Users/aycelacap/Desktop/brewBottle/node_modules/@babel/parser/lib/index.js:9758:17)\n    at Object.parseExprOps (/Users/aycelacap/Desktop/brewBottle/node_modules/@babel/parser/lib/index.js:9628:23)\n    at Object.parseMaybeConditional (/Users/aycelacap/Desktop/brewBottle/node_modules/@babel/parser/lib/index.js:9602:23)\n    at Object.parseMaybeAssign (/Users/aycelacap/Desktop/brewBottle/node_modules/@babel/parser/lib/index.js:9565:21)\n    at Object.parseExpression (/Users/aycelacap/Desktop/brewBottle/node_modules/@babel/parser/lib/index.js:9517:23)\n    at Object.parseReturnStatement (/Users/aycelacap/Desktop/brewBottle/node_modules/@babel/parser/lib/index.js:11700:28)\n    at Object.parseStatementContent (/Users/aycelacap/Desktop/brewBottle/node_modules/@babel/parser/lib/index.js:11379:21)\n    at Object.parseStatement (/Users/aycelacap/Desktop/brewBottle/node_modules/@babel/parser/lib/index.js:11331:17)\n    at Object.parseBlockOrModuleBlockBody (/Users/aycelacap/Desktop/brewBottle/node_modules/@babel/parser/lib/index.js:11913:25)\n    at Object.parseBlockBody (/Users/aycelacap/Desktop/brewBottle/node_modules/@babel/parser/lib/index.js:11899:10)");
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _actions_product_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions/product_actions */ "./frontend/actions/product_actions.js");
+/* harmony import */ var _product_index__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./product_index */ "./frontend/components/products/product_index.jsx");
+
+
+
+
+
+var mSTP = function mSTP(state) {
+  // debugger
+  return {
+    products: Object.values(state.entities.products) // category: 
+
+  };
+};
+
+var mDTP = function mDTP(dispatch) {
+  return {
+    fetchProducts: function fetchProducts() {
+      return dispatch(Object(_actions_product_actions__WEBPACK_IMPORTED_MODULE_2__["fetchProducts"])());
+    },
+    fetchProductsByCategory: function fetchProductsByCategory(item_type) {
+      return dispatch(Object(_actions_product_actions__WEBPACK_IMPORTED_MODULE_2__["fetchProductsByCategory"])(item_type));
+    },
+    fetchProduct: function (_fetchProduct) {
+      function fetchProduct(_x) {
+        return _fetchProduct.apply(this, arguments);
+      }
+
+      fetchProduct.toString = function () {
+        return _fetchProduct.toString();
+      };
+
+      return fetchProduct;
+    }(function (id) {
+      return dispatch(fetchProduct(id));
+    })
+  };
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mSTP, mDTP)(_product_index__WEBPACK_IMPORTED_MODULE_3__["default"]));
+
+/***/ }),
+
+/***/ "./frontend/components/products/product_index_item.jsx":
+/*!*************************************************************!*\
+  !*** ./frontend/components/products/product_index_item.jsx ***!
+  \*************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+
+
+
+var ProductIndexItem = function ProductIndexItem(_ref) {
+  var product = _ref.product;
+  // debugger
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+    className: "whole-page-wrapper"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "whole-content-wrapper"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "product-index-item-container"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+    to: "/products/".concat(product.id)
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "product-index-item-picture"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    className: "show-pic",
+    src: product.photoUrls[0]
+  })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "product-item-text"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "product-item-name"
+  }, product.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "product-item-price"
+  }, "$", product.price))));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (ProductIndexItem);
 
 /***/ }),
 
