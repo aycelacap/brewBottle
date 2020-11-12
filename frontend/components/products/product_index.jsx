@@ -9,7 +9,7 @@ class ProductIndex extends React.Component {
 
         this.state = {
             products: null,
-            category: null,
+            // category: null,
         }
 
 
@@ -37,13 +37,11 @@ class ProductIndex extends React.Component {
         e.preventDefault();
         const id = e.currentTarget.value 
         return(
-            this.props.fetchProduct(id)
+            this.props.fetchProducts(id)
         )         
     }
 
-    // try this for category
-    // item_type: "consumption", category_id: 105
-    // item_type: "coffee supply", category_id: 100
+
     handleCategory(e) {
         e.preventDefault()
         let category_id = e.currentTarget.value
@@ -62,6 +60,7 @@ class ProductIndex extends React.Component {
         // const { products } = this.state
 
         if (!this.props.products) return null
+        // if (!this.props.category) return null
         // debugger
 
         let productIdx = this.props.products.map(product => {
@@ -101,16 +100,3 @@ export default ProductIndex;
 // todo:
 // ask about warning = unique key in render 
 
-
-//  <div className="product-category-links">
-//                   {/* turn these links into buttons
-//                   onClick will set the state to the category
-//                   based on the category,  */}
-//                 <Link to="/products">SHOP ALL</Link>
-//                 &nbsp; &nbsp;
-//                 <Link to="/products">COFFEE</Link>
-//                 &nbsp; &nbsp;
-//                 <Link to="/products">BREWING</Link>
-//                 &nbsp; &nbsp;
-//                 <Link to="/products">SEASONAL</Link>
-// </div>

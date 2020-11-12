@@ -1,7 +1,7 @@
 class Api::ProductsController < ApplicationController
     def index
         if params[:category_id]
-            @products = Product.find_by(category_id: params[:category_id])
+            @products = Product.where(category_id: params[:category_id])
         else
             # debugger
             @products = Product.all

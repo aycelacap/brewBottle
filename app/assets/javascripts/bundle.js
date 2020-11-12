@@ -794,8 +794,8 @@ var ProductIndex = /*#__PURE__*/function (_React$Component) {
 
     _this = _super.call(this, props);
     _this.state = {
-      products: null,
-      category: null
+      products: null // category: null,
+
     }; //     // let's bind our helper functions
     // THIS BIND handles all categories
 
@@ -826,11 +826,8 @@ var ProductIndex = /*#__PURE__*/function (_React$Component) {
     value: function handleGetProducts(e) {
       e.preventDefault();
       var id = e.currentTarget.value;
-      return this.props.fetchProduct(id);
-    } // try this for category
-    // item_type: "consumption", category_id: 105
-    // item_type: "coffee supply", category_id: 100
-
+      return this.props.fetchProducts(id);
+    }
   }, {
     key: "handleCategory",
     value: function handleCategory(e) {
@@ -849,7 +846,8 @@ var ProductIndex = /*#__PURE__*/function (_React$Component) {
     key: "render",
     value: function render() {
       // const { products } = this.state
-      if (!this.props.products) return null; // debugger
+      if (!this.props.products) return null; // if (!this.props.category) return null
+      // debugger
 
       var productIdx = this.props.products.map(function (product) {
         // we need to make a single product presentational component to single out the products from the index 
@@ -889,19 +887,7 @@ var ProductIndex = /*#__PURE__*/function (_React$Component) {
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
 /* harmony default export */ __webpack_exports__["default"] = (ProductIndex); // todo:
-// ask about warning = unique key in render 
-//  <div className="product-category-links">
-//                   {/* turn these links into buttons
-//                   onClick will set the state to the category
-//                   based on the category,  */}
-//                 <Link to="/products">SHOP ALL</Link>
-//                 &nbsp; &nbsp;
-//                 <Link to="/products">COFFEE</Link>
-//                 &nbsp; &nbsp;
-//                 <Link to="/products">BREWING</Link>
-//                 &nbsp; &nbsp;
-//                 <Link to="/products">SEASONAL</Link>
-// </div>
+// ask about warning = unique key in render
 
 /***/ }),
 
