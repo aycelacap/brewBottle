@@ -40,8 +40,8 @@ export const fetchProducts = () => dispatch => {
 //     
 // 
 
-export const fetchProductsByCategory = (item_type, name) => dispatch => {
-    return ProductApiUtil.fetchProductsByName(item_type, name)
+export const fetchProductsByCategory = (item_type, searchTerm ='') => dispatch => {
+    return ProductApiUtil.fetchProductsByName(item_type, searchTerm)
         .then(products => dispatch(receiveProducts(products)),
         error => dispatch(receiveProductErrors(error.responseJSON)))
 } 

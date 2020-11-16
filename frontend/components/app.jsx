@@ -11,6 +11,8 @@ import ProductShowContainer from './products/product_show_container'
 import Splash from "./splash/splash"
 import { AuthRoute, ProtectedRoute } from "../util/route_util";
 
+// import SearchContianer from './search/search_contianer';
+
 const App = () => (
   <div>
     <header>
