@@ -118,5 +118,11 @@
 
 .video-container {
   object-fit: contain;
-  
+
 }
+
+.video-react-control-text {
+  display: hidden !important;
+}
+
+// doc get element by id "" use ref 

@@ -86,6 +86,8 @@ class ProductIndex extends React.Component {
                         <button className='product-index-buttons' onClick={this.handleCategory} value="250">
                             SEASONAL
                         </button>
+
+                        <div className="search-box">search here o.O</div>
                     </div>  
             </nav>
             <ul className="product-index-item">{productIdx}</ul>

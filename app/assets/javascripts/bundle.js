@@ -166,6 +166,46 @@ var fetchProduct = function fetchProduct(id) {
 
 /***/ }),
 
+/***/ "./frontend/actions/search_actions.js":
+/*!********************************************!*\
+  !*** ./frontend/actions/search_actions.js ***!
+  \********************************************/
+/*! exports provided: RECEIVE_SEARCH_RESULTS, CLEAR_SEARCH, clearSearch, getResults */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_SEARCH_RESULTS", function() { return RECEIVE_SEARCH_RESULTS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CLEAR_SEARCH", function() { return CLEAR_SEARCH; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "clearSearch", function() { return clearSearch; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getResults", function() { return getResults; });
+/* harmony import */ var _util_search_api_util__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../util/search_api_util */ "./frontend/util/search_api_util.js");
+
+var RECEIVE_SEARCH_RESULTS = "RECEIVE_SEARCH_RESULTS";
+var CLEAR_SEARCH = 'CLEAR_SEARCH';
+
+var receiveSearchResults = function receiveSearchResults(searchResults) {
+  return {
+    type: RECEIVE_SEARCH_RESULTS,
+    searchResults: searchResults
+  };
+};
+
+var clearSearch = function clearSearch() {
+  return {
+    type: CLEAR_SEARCH
+  };
+};
+var getResults = function getResults(searchString) {
+  return function (dispatch) {
+    _util_search_api_util__WEBPACK_IMPORTED_MODULE_0__["getSearchResults"](searchString).then(function (results) {
+      return dispatch(receiveSearchResults(results));
+    });
+  };
+}; // <video class="bg-white shape-content z-index-1" autoplay="autoplay" loop="loop" muted="muted" poster="https://blue-bottle-cms.global.ssl.fastly.net/hbhhv9rz9/video/upload/q_100/v1604951514/qovhlkl1o0mniiihvkvh.jpg"><source src="https://blue-bottle-cms.global.ssl.fastly.net/hbhhv9rz9/video/upload/q_100/v1604951514/qovhlkl1o0mniiihvkvh.webm" type="video/webm"><source src="https://blue-bottle-cms.global.ssl.fastly.net/hbhhv9rz9/video/upload/q_100/v1604951514/qovhlkl1o0mniiihvkvh.mp4" type="video/mp4"><source src="https://blue-bottle-cms.global.ssl.fastly.net/hbhhv9rz9/video/upload/q_100/v1604951514/qovhlkl1o0mniiihvkvh.ogv" type="video/ogg"></video>
+
+/***/ }),
+
 /***/ "./frontend/actions/session_actions.js":
 /*!*********************************************!*\
   !*** ./frontend/actions/session_actions.js ***!
@@ -878,7 +918,9 @@ var ProductIndex = /*#__PURE__*/function (_React$Component) {
         className: "product-index-buttons",
         onClick: this.handleCategory,
         value: "250"
-      }, "SEASONAL"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+      }, "SEASONAL"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "search-box"
+      }, "search here o.O"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
         className: "product-index-item"
       }, productIdx));
     }
@@ -1624,22 +1666,26 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 /* harmony import */ var video_react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! video-react */ "./node_modules/video-react/lib/index.js");
 /* harmony import */ var video_react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(video_react__WEBPACK_IMPORTED_MODULE_2__);
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 
 
 
 
 var Splash = function Splash() {
+  var _React$createElement;
+
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
     className: "blue-nav"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Due to the health and safety of our emplyees, orders may take longer to arrive  | ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
     to: "/products",
     className: "blue-nav-link"
-  }, " SHOP NOW")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "US stores now open for takeaway")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(video_react__WEBPACK_IMPORTED_MODULE_2__["Player"], {
+  }, " SHOP NOW")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "US stores now open for takeaway")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(video_react__WEBPACK_IMPORTED_MODULE_2__["Player"], (_React$createElement = {
     className: "video-container",
-    playing: "true",
-    loop: "true",
-    muted: "true"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("source", {
+    playing: true,
+    loop: true,
+    muted: true
+  }, _defineProperty(_React$createElement, "playing", true), _defineProperty(_React$createElement, "height", "100%"), _defineProperty(_React$createElement, "width", "100%"), _React$createElement), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("source", {
     src: "https://blue-bottle-cms.global.ssl.fastly.net/hbhhv9rz9/video/upload/q_100/v1604951514/qovhlkl1o0mniiihvkvh.ogv"
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "splash-page-main-container"
@@ -1745,14 +1791,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! redux */ "./node_modules/redux/es/redux.js");
 /* harmony import */ var _users_reducer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./users_reducer */ "./frontend/reducers/users_reducer.js");
 /* harmony import */ var _products_reducer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./products_reducer */ "./frontend/reducers/products_reducer.js");
+/* harmony import */ var _search_reducer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./search_reducer */ "./frontend/reducers/search_reducer.js");
 
 
- // import searchReducer from './search_reducer'
+
 
 /* harmony default export */ __webpack_exports__["default"] = (Object(redux__WEBPACK_IMPORTED_MODULE_0__["combineReducers"])({
   users: _users_reducer__WEBPACK_IMPORTED_MODULE_1__["default"],
-  products: _products_reducer__WEBPACK_IMPORTED_MODULE_2__["default"] // searchReducer: searchReducer,
-
+  products: _products_reducer__WEBPACK_IMPORTED_MODULE_2__["default"],
+  searchReducer: _search_reducer__WEBPACK_IMPORTED_MODULE_3__["default"]
 }));
 
 /***/ }),
@@ -1871,6 +1918,41 @@ var rootReducer = Object(redux__WEBPACK_IMPORTED_MODULE_0__["combineReducers"])(
   entities: _entities_reducer__WEBPACK_IMPORTED_MODULE_3__["default"]
 });
 /* harmony default export */ __webpack_exports__["default"] = (rootReducer); // entities are where our users are nested
+
+/***/ }),
+
+/***/ "./frontend/reducers/search_reducer.js":
+/*!*********************************************!*\
+  !*** ./frontend/reducers/search_reducer.js ***!
+  \*********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _actions_search_actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../actions/search_actions */ "./frontend/actions/search_actions.js");
+
+
+var searchReducer = function searchReducer() {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
+  var action = arguments.length > 1 ? arguments[1] : undefined;
+  Object.freeze(state);
+
+  switch (action.type) {
+    case _actions_search_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_SEARCH_RESULTS"]:
+      return action.searchResults;
+
+    case _actions_search_actions__WEBPACK_IMPORTED_MODULE_0__["CLEAR_SEARCH"]:
+      return [];
+
+    default:
+      return state;
+  }
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (searchReducer); // we want to have this state as a key in our entities 
+// -> entities reducer where we combine states that are values (nested pojos here as well )of the top 
+// level entities key
 
 /***/ }),
 
@@ -2097,6 +2179,27 @@ var mSTP = function mSTP(state) {
 
 var AuthRoute = Object(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["withRouter"])(Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mSTP)(Auth));
 var ProtectedRoute = Object(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["withRouter"])(Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mSTP)(Protected));
+
+/***/ }),
+
+/***/ "./frontend/util/search_api_util.js":
+/*!******************************************!*\
+  !*** ./frontend/util/search_api_util.js ***!
+  \******************************************/
+/*! exports provided: getSearchResults */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getSearchResults", function() { return getSearchResults; });
+/* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! redux */ "./node_modules/redux/es/redux.js");
+
+var getSearchResults = function getSearchResults(searchString) {
+  return redux__WEBPACK_IMPORTED_MODULE_0__["$CombinedState"].ajax({
+    url: "/api/search/".concat(searchString),
+    method: "GET"
+  });
+};
 
 /***/ }),
 

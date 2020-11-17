@@ -19,7 +19,7 @@ const Splash = () => {
         </p> */}
 
         {/* <Player class="bg-white shape-content z-index-1" autoplay="autoplay" loop="loop" muted="muted" src="https://blue-bottle-cms.global.ssl.fastly.net/hbhhv9rz9/video/upload/q_100/v1604951514/qovhlkl1o0mniiihvkvh.jpg"><source src="https://blue-bottle-cms.global.ssl.fastly.net/hbhhv9rz9/video/upload/q_100/v1604951514/qovhlkl1o0mniiihvkvh.webm" type="video/webm"><source src="https://blue-bottle-cms.global.ssl.fastly.net/hbhhv9rz9/video/upload/q_100/v1604951514/qovhlkl1o0mniiihvkvh.mp4" type="video/mp4"><source src="https://blue-bottle-cms.global.ssl.fastly.net/hbhhv9rz9/video/upload/q_100/v1604951514/qovhlkl1o0mniiihvkvh.ogv" type="video/ogg"></Player> */}
-        <Player className="video-container" playing="true" loop="true" muted="true">
+        <Player className="video-container" playing={true} loop={true} muted={true} playing={true} height="100%" width="100%">
           <source src="https://blue-bottle-cms.global.ssl.fastly.net/hbhhv9rz9/video/upload/q_100/v1604951514/qovhlkl1o0mniiihvkvh.ogv" />
         </Player>
 
