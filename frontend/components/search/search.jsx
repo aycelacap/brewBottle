@@ -11,7 +11,7 @@ class Search extends React.Component {
 
     // we want to handle the input of the user
     handleSearch(e) {
-      debugger
+      // debugger
         if (e.target.value === "") {
             this.props.clearSearch()
         } else {

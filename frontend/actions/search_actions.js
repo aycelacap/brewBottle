@@ -12,7 +12,7 @@ export const clearSearch = () => ({
 });
 
 export const getResults = searchString => dispatch => {
-    debugger
+    // debugger
     SearchAPIUtil.getSearchResults(searchString)
         .then(results => dispatch(receiveSearchResults(results)))
 };
