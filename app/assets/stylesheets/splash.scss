@@ -121,6 +121,11 @@
 
 }
 
+.video-react-video {
+  object-fit: contain;
+  background-size: cover !important;
+}
+
 .video-react-control-text {
   display: hidden !important;
 }

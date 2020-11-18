@@ -2,6 +2,7 @@ import React from 'react';
 import ProductIndexItem from './product_index_item';
 // import ProductIndex from './product_index_container'
 import { Link } from "react-router-dom";
+import SearchContainer from '../search/search_container'
 
 class ProductIndex extends React.Component {
     constructor(props) {
@@ -9,6 +10,7 @@ class ProductIndex extends React.Component {
 
         this.state = {
             products: null,
+            searchTerm: '',
             // category: null,
         }
 
@@ -87,7 +89,10 @@ class ProductIndex extends React.Component {
                             SEASONAL
                         </button>
 
-                        <div className="search-box">search here o.O</div>
+                        {/* <div className="search-box">search here o.O</div> */}
+                        <div onClick={this.props.clearSearch} className='searchbar-icon-nav'>                                  
+                            <SearchContainer />
+                        </div>
                     </div>  
             </nav>
             <ul className="product-index-item">{productIdx}</ul>

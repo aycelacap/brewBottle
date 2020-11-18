@@ -5,10 +5,13 @@ class Search extends React.Component {
     constructor(props) {
         super(props)
 
+        this.handleSearch = this.handleSearch.bind(this);
+
     }
 
     // we want to handle the input of the user
     handleSearch(e) {
+      debugger
         if (e.target.value === "") {
             this.props.clearSearch()
         } else {
@@ -18,7 +21,6 @@ class Search extends React.Component {
 
     componentDidMount() {
         this.props.clearSearch()
-        // window.scrollTo(0,0) figure this out
     }
 
     render() {

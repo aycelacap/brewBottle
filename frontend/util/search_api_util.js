@@ -1,8 +1,9 @@
-import { $CombinedState } from "redux"
-
-export const getSearchResults = searchString => {
-    return $CombinedState.ajax({
-        url: `/api/search/${searchString}`,
+export const getSearchResults = (searchString) => {
+    debugger
+    return $.ajax({
+        url: `/api/products/search/${searchString}`,
         method: "GET"
     })
 }
+
+// you cant place a debugger with implicit return 

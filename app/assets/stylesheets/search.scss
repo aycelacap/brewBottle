@@ -1,0 +1,33 @@
+
+.search-product-items {
+    display: flex;
+    justify-content: flex-start;
+    // margin-top: 1.5rem;
+    margin: 1.5rem;
+}
+
+.search-product-items:hover {
+    background-color: rgb(251, 251, 251);
+}
+
+.search-product-items-name {
+    font-size: .85rem;
+}
+
+.search-product-items-img {
+    min-height: 45px;
+    margin-right: 10px;
+    width: 25%;
+}
+
+
+.search-body-result {
+    background-color: #fafafa;
+    // background-color: #fff;
+    position: absolute;
+    width: 23.125rem;
+    z-index: 2;
+    box-sizing: border-box;
+    top: calc(70% + 1.5rem);
+    right: 16.5%;
+}
