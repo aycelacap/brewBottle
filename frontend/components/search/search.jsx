@@ -6,6 +6,9 @@ class Search extends React.Component {
         super(props)
 
         this.handleSearch = this.handleSearch.bind(this);
+        this.state = {
+            // search: 1
+        }
 
     }
 
@@ -15,22 +18,32 @@ class Search extends React.Component {
         if (e.target.value === "") {
             this.props.clearSearch()
         } else {
-            this.props.getResults(e.target.value);
+            // this.props.updateIndex(Object.values(this.props.results))
+            this.props.getResults(e.target.value)
+            // .then(() => {
+            //     this.setState({
+            //         search: this.state.search + 1
+            //     })
+            // })
+
         }
     }
 
     componentDidMount() {
         this.props.clearSearch()
+
     }
 
     render() {
+        console.log("hello", this.props.results)
         const searchResults = this.props.searches.map(product => (
             <SearchItem clearSearch={this.props.clearSearch} key={product.id} product={product} />))
-        return (
-            <div className="search-bar">
+            // console.log(this.props)
+            return (
+                <div className="search-bar">
                 <div className="searchbar-icon">
                     {/* <i className="fas fa-search searchIcon"></i> */}
-                    <input className='searchbox' onChange={this.handleSearch} type="text" placeholder="Search" />
+                    <input className='searchbox' onChange={this.handleSearch} type="text" placeholder="Search"/>
                 </div>
                 <div className="search-body-result">
                     {searchResults.slice(0, 4)}

@@ -19,6 +19,7 @@ class ProductIndex extends React.Component {
         // THIS BIND handles all categories
         this.handleGetProducts = this.handleGetProducts.bind(this);
         this.handleCategory = this.handleCategory.bind(this);
+        // this.updateIndex = this.updateIndex.bind(this);
 
     }
 
@@ -43,6 +44,12 @@ class ProductIndex extends React.Component {
         )         
     }
 
+    // updateIndex(newIdx) {
+    //     this.setState({
+    //         products: newIdx,
+    //     })
+    // };
+
 
     handleCategory(e) {
         e.preventDefault()
@@ -60,17 +67,29 @@ class ProductIndex extends React.Component {
 
     render () {
         // const { products } = this.state
-
+        console.log(this.props.results)
         if (!this.props.products) return null
         // if (!this.props.category) return null
         // debugger
 
-        let productIdx = this.props.products.map(product => {
-            // we need to make a single product presentational component to single out the products from the index 
-            // therefore, we iterating through
-            // debugger 
-            return(<ProductIndexItem product={product} key={product.id}/>) 
-        });
+        let productIdx;
+        if (this.props.results.length === 0) {
+            
+            productIdx = this.props.products.map(product => {
+                return(<ProductIndexItem product={product} key={product.id}/>) 
+            });
+        } else {
+            productIdx = this.props.results.map(product => {
+                return(<ProductIndexItem product={product} key={product.id}/>) 
+            });
+        }
+
+        // const renderComponent = () => {
+        //     if (this.props.results.length === 0) {
+        //         return 
+        //     }
+        // }
+
 
         return (
           <div>
@@ -91,7 +110,8 @@ class ProductIndex extends React.Component {
 
                         {/* <div className="search-box">search here o.O</div> */}
                         <div onClick={this.props.clearSearch} className='searchbar-icon-nav'>                                  
-                            <SearchContainer />
+                            {/* <SearchContainer updateIndex={this.updateIndex}/> */}
+                            <SearchContainer/>
                         </div>
                     </div>  
             </nav>

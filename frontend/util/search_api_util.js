@@ -1,9 +1,9 @@
 export const getSearchResults = (searchString) => {
     // debugger
     return $.ajax({
-        // url: `/api/products/search/${searchString}`,
-        url: `/api/products/${searchString}`,
-        method: "GET"
+        url: '/api/search',
+        method: "GET",
+        data: {searchString},
     })
 }
 

@@ -845,7 +845,8 @@ var ProductIndex = /*#__PURE__*/function (_React$Component) {
     // THIS BIND handles all categories
 
     _this.handleGetProducts = _this.handleGetProducts.bind(_assertThisInitialized(_this));
-    _this.handleCategory = _this.handleCategory.bind(_assertThisInitialized(_this));
+    _this.handleCategory = _this.handleCategory.bind(_assertThisInitialized(_this)); // this.updateIndex = this.updateIndex.bind(this);
+
     return _this;
   }
 
@@ -872,7 +873,12 @@ var ProductIndex = /*#__PURE__*/function (_React$Component) {
       e.preventDefault();
       var id = e.currentTarget.value;
       return this.props.fetchProducts(id);
-    }
+    } // updateIndex(newIdx) {
+    //     this.setState({
+    //         products: newIdx,
+    //     })
+    // };
+
   }, {
     key: "handleCategory",
     value: function handleCategory(e) {
@@ -891,18 +897,33 @@ var ProductIndex = /*#__PURE__*/function (_React$Component) {
     key: "render",
     value: function render() {
       // const { products } = this.state
+      console.log(this.props.results);
       if (!this.props.products) return null; // if (!this.props.category) return null
       // debugger
 
-      var productIdx = this.props.products.map(function (product) {
-        // we need to make a single product presentational component to single out the products from the index 
-        // therefore, we iterating through
-        // debugger 
-        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_product_index_item__WEBPACK_IMPORTED_MODULE_1__["default"], {
-          product: product,
-          key: product.id
+      var productIdx;
+
+      if (this.props.results.length === 0) {
+        productIdx = this.props.products.map(function (product) {
+          return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_product_index_item__WEBPACK_IMPORTED_MODULE_1__["default"], {
+            product: product,
+            key: product.id
+          });
         });
-      });
+      } else {
+        productIdx = this.props.results.map(function (product) {
+          return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_product_index_item__WEBPACK_IMPORTED_MODULE_1__["default"], {
+            product: product,
+            key: product.id
+          });
+        });
+      } // const renderComponent = () => {
+      //     if (this.props.results.length === 0) {
+      //         return 
+      //     }
+      // }
+
+
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
         className: "product-category"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -961,8 +982,8 @@ __webpack_require__.r(__webpack_exports__);
 var mSTP = function mSTP(state) {
   // debugger
   return {
-    products: Object.values(state.entities.products) // category: 
-
+    products: Object.values(state.entities.products),
+    results: Object.values(state.entities.searchReducer)
   };
 };
 
@@ -1257,6 +1278,8 @@ var Search = /*#__PURE__*/function (_React$Component) {
 
     _this = _super.call(this, props);
     _this.handleSearch = _this.handleSearch.bind(_assertThisInitialized(_this));
+    _this.state = {// search: 1
+    };
     return _this;
   } // we want to handle the input of the user
 
@@ -1268,7 +1291,12 @@ var Search = /*#__PURE__*/function (_React$Component) {
       if (e.target.value === "") {
         this.props.clearSearch();
       } else {
-        this.props.getResults(e.target.value);
+        // this.props.updateIndex(Object.values(this.props.results))
+        this.props.getResults(e.target.value); // .then(() => {
+        //     this.setState({
+        //         search: this.state.search + 1
+        //     })
+        // })
       }
     }
   }, {
@@ -1281,13 +1309,15 @@ var Search = /*#__PURE__*/function (_React$Component) {
     value: function render() {
       var _this2 = this;
 
+      console.log("hello", this.props.results);
       var searchResults = this.props.searches.map(function (product) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_search_item__WEBPACK_IMPORTED_MODULE_1___default.a, {
           clearSearch: _this2.props.clearSearch,
           key: product.id,
           product: product
         });
-      });
+      }); // console.log(this.props)
+
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "search-bar"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1328,7 +1358,8 @@ __webpack_require__.r(__webpack_exports__);
 
 var mapStateToProps = function mapStateToProps(state, ownProps) {
   return {
-    searches: state.entities.search || []
+    searches: state.entities.search || [] // results: Object.values(state.entities.searchReducer)
+
   };
 };
 
@@ -2370,9 +2401,11 @@ __webpack_require__.r(__webpack_exports__);
 var getSearchResults = function getSearchResults(searchString) {
   // debugger
   return $.ajax({
-    // url: `/api/products/search/${searchString}`,
-    url: "/api/products/".concat(searchString),
-    method: "GET"
+    url: '/api/search',
+    method: "GET",
+    data: {
+      searchString: searchString
+    }
   });
 }; // you cant place a debugger with an implicit return
 

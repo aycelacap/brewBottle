@@ -7,7 +7,7 @@ const mSTP = state => {
     // debugger
     return {
         products: Object.values(state.entities.products),
-        // category: 
+        results: Object.values(state.entities.searchReducer)
     }
 };
 
