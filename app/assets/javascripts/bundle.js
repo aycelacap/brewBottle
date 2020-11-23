@@ -955,7 +955,7 @@ var ProductIndex = /*#__PURE__*/function (_React$Component) {
   return ProductIndex;
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
-/* harmony default export */ __webpack_exports__["default"] = (ProductIndex); // todo:
+/* harmony default export */ __webpack_exports__["default"] = (ProductIndex); // Todo:
 // ask about warning = unique key in render
 
 /***/ }),
