@@ -59,7 +59,8 @@ brewBottle is an e-commerce website, inspired from the Blue Bottle Coffee Compan
 
 
 
-
+<!-- bundle exec rails g migration CreateCart_items -->
+<!-- bundle exec rails g model cart_item -->
 
 
 
