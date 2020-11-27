@@ -9,6 +9,10 @@ class User < ApplicationRecord
     attr_reader :password
     attr_reader :confirm_password
 
+    has_many :cart_items,
+    foreign_key: :user_id,
+    class_name: :CartItem
+
     # AASPIRE
 
     def self.find_by_credentials(email, password)
