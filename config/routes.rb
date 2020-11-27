@@ -7,6 +7,7 @@ root to: "static_pages#root"
     resource :session, only: [:create, :destroy, :show]
     resources :products, only: [:index, :show] 
     resources :search, only: [:index]
+    resources :cart_items, only: [:index, :create, :destroy, :show]
   
   end
   
