@@ -8,4 +8,4 @@
         #     json.photo ''
         # end
     end
-end
+end 
