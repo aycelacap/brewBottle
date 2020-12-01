@@ -5,6 +5,7 @@ import LogInFormContainer from "./session_form/login_form_container";
 import SignUpFormContainer from "./session_form/signup_form_container";
 import GreetingContainer from "./greeting/greeting_container";
 import Footer from '../components/footer/footer'
+import CartContainer from './cart/cart_container';
 import ProductIndexContainer from './products/product_index_container'
 import ProductShowContainer from './products/product_show_container'
 
@@ -24,6 +25,7 @@ const App = () => (
      {/* <Route exact path="/products/seasonal" component={SeasonalIndexContainer} /> */}
       <Route exact path='/products/:id' component={ProductShowContainer}/>
       <Route exact path='/products' component={ProductIndexContainer} />
+      <Route exact path="/cart" component={CartContainer} />
       <AuthRoute exact path="/login" component={LogInFormContainer} />
       <AuthRoute exact path="/signup" component={SignUpFormContainer} />
       <Route exact path="/" component={Splash} />
