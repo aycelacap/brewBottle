@@ -3,6 +3,29 @@ import React from 'react'
 class Product extends React.Component {
     constructor(props) {
         super(props)
+        this.state = {
+                quantity: 1,
+                size: '',
+            }
+        this.addToCart = this.addToCart.bind(this);
+    }
+
+        // we need an add to cart function that is an onclick for the logo on line 
+
+
+    addToCart(e) {
+        e.preventDefault()
+        let { product } = this.props
+        
+        if (this.props.currentUser) {
+            product['quantity'] = this.state.quantity
+            this.props
+                .createCartItem({ cart_item: { product: product } })
+                .then(() => this.props.openModal("Add_To_Cart"));
+        } else {
+            // this.props.history.push("/UserSession")
+            console.log("login")
+        }
     }
 
     componentDidMount() {

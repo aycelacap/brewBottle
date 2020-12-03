@@ -1544,12 +1544,43 @@ var Product = /*#__PURE__*/function (_React$Component) {
   var _super = _createSuper(Product);
 
   function Product(props) {
+    var _this;
+
     _classCallCheck(this, Product);
 
-    return _super.call(this, props);
-  }
+    _this = _super.call(this, props);
+    _this.state = {
+      quantity: 1,
+      size: ''
+    };
+    _this.addToCart = _this.addToCart.bind(_assertThisInitialized(_this));
+    return _this;
+  } // we need an add to cart function that is an onclick for the logo on line 
+
 
   _createClass(Product, [{
+    key: "addToCart",
+    value: function addToCart(e) {
+      var _this2 = this;
+
+      e.preventDefault();
+      var product = this.props.product;
+
+      if (this.props.currentUser) {
+        product['quantity'] = this.state.quantity;
+        this.props.createCartItem({
+          cart_item: {
+            product: product
+          }
+        }).then(function () {
+          return _this2.props.openModal("Add_To_Cart");
+        });
+      } else {
+        // this.props.history.push("/UserSession")
+        console.log("login");
+      }
+    }
+  }, {
     key: "componentDidMount",
     value: function componentDidMount() {
       this.props.fetchProduct(this.props.match.params.id);
