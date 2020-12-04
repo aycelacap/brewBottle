@@ -24,7 +24,7 @@ class Product extends React.Component {
                 .then(() => this.props.openModal("Add_To_Cart"));
         } else {
             // this.props.history.push("/UserSession")
-            console.log("login")
+            console.log("else statement: cart")
         }
     }
 
