@@ -1,5 +1,5 @@
 import React from 'react';
-// import CartIndexItem from './cart_index_item_container';
+import CartIndexItem from './cart_index_item_container';
 import { Link } from 'react-router-dom';
 
 class Cart extends React.Component {
@@ -205,9 +205,10 @@ class Cart extends React.Component {
     ) : (
         <div className="signed-out-cart">
           <h1 className="signed-out-message">Give your bag some love!</h1>
-          <a className="shop-button" href="#products">
+          {/* <a className="shop-button" href="#/products">
             SHOP WHAT'S NEW
-        </a>
+        </a> */}
+        <Link className="shop-button" to="/products">SHOP ALL NEW</Link>
         </div>
       );
     return cart_page;

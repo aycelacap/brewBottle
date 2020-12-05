@@ -19,8 +19,8 @@
 //             <div>
 //               <div>{product.name}</div>
 //               <div>{product.color}</div>
-//               <div>{product.size}</div>
-//               <img className="idx-images" src={product.photoUrl} alt="" />
+//               {/* <div>{product.size}</div> */}
+//               {/* <img className="idx-images" src={product.photoUrl} alt="" /> */}
 //             </div>
 //           );
 //         })}

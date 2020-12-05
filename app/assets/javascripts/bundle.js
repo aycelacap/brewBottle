@@ -514,7 +514,9 @@ var App = function App() {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var _cart_index_item_container__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./cart_index_item_container */ "./frontend/components/cart/cart_index_item_container.js");
+/* harmony import */ var _cart_index_item_container__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_cart_index_item_container__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -537,7 +539,7 @@ function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Re
 
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
- // import CartIndexItem from './cart_index_item_container';
+
 
 
 
@@ -696,7 +698,7 @@ var Cart = /*#__PURE__*/function (_React$Component) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "cart-product-info",
           key: cartItem[1].cartItemId
-        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
           className: "cart-product-link",
           to: "/products/".concat(product.id)
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
@@ -709,7 +711,7 @@ var Cart = /*#__PURE__*/function (_React$Component) {
           className: "prod-des-top"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "cart-product-name-container"
-        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
           className: "cart-product-link",
           to: "/products/".concat(product.id)
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -778,10 +780,10 @@ var Cart = /*#__PURE__*/function (_React$Component) {
         className: "signed-out-cart"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
         className: "signed-out-message"
-      }, "Give your bag some love!"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+      }, "Give your bag some love!"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
         className: "shop-button",
-        href: "#products"
-      }, "SHOP WHAT'S NEW"));
+        to: "/products"
+      }, "SHOP ALL NEW"));
       return cart_page;
     }
   }]);
@@ -834,6 +836,34 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mapStateToProps, mapDispatchToProps)(_cart__WEBPACK_IMPORTED_MODULE_2__["default"]));
+
+/***/ }),
+
+/***/ "./frontend/components/cart/cart_index_item_container.js":
+/*!***************************************************************!*\
+  !*** ./frontend/components/cart/cart_index_item_container.js ***!
+  \***************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// import{ connect } from 'react-redux';
+// import React from 'react';
+// import CartIndexItem from './cart_index_item_container';
+// import { getAllCartItems, deleteCartItem, getCartItem, createCartItem} from '../../actions/cart_actions'
+// const mapStateToProps = state => {
+//     return({
+//     products: Object.values(state.entities.products),
+//     cartItems: Object.values(state.entities.cartItems),
+//     currentUser: state.entities.users[state.session.id]
+// })}
+// const mapDispatchToProps = dispatch => {
+//     return ({
+//     getAllCartItems: () => dispatch(getAllCartItems()),
+//     getCartItem: cartItemId => dispatch(getCartItem(cartItemId)),
+//     deleteCartItem: cartItemId => dispatch(deleteCartItem(cartItemId)),
+//     createCartItem: cartItem => dispatch(createCartItem(cartItem))
+// })}
+// export default connect(mapStateToProps, mapDispatchToProps)(CartIndexItem);
 
 /***/ }),
 
@@ -1047,9 +1077,11 @@ var Greeting = function Greeting(_ref) {
       to: "/login"
     }, "SIGN IN"), "\xA0   \xA0", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
       href: "https://www.youtube.com/watch?v=djV11Xbc914"
-    }, "SUBSCRIBE"), "\xA0   \xA0", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    }, "SUBSCRIBE"), "\xA0   \xA0", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+      to: "/cart"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
       className: "fas fa-shopping-cart"
-    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
       className: "amurica",
       src: window.usFlag,
       alt: ""
@@ -1094,130 +1126,7 @@ var Greeting = function Greeting(_ref) {
   return currentUser ? personalGreeting() : sessionLinks();
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Greeting); // const Greeting = ({ currentUser, logout }) => {
-//   const sessionLinks = () => (
-//     <nav className="header-group">
-//       <Link to="/">
-//         <img
-//           className="navbar-logo"
-//           src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSnzseHuGCDLVHzlbP6aD2oKcCr2F53Hhul4g&usqp=CAU"
-//         />
-//       </Link>
-//       <div className="dropdown">
-//           <Link id="left-nav" to="/products">SHOP
-//           <button className="dropbtn"></button>
-//           <div className="dropdown-content">
-//             <a href="/">hi</a>
-//             <a href="/">hello</a>
-//             <a href="/">hey</a>
-//           </div>
-//           </Link>
-//           &nbsp; &nbsp;
-//           <Link id="left-nav" to="/">
-//           VISIT
-//             <button className="dropbtn">
-//             </button>
-//           <div className="dropdown-content">
-//             <a href="/">hi</a>
-//             <a href="/">hello</a>
-//             <a href="/">hey</a>
-//           </div>
-//           </Link>
-//           &nbsp; &nbsp;
-//           <Link id="left-nav" to="/">
-//           LEARN
-//             <button className="dropbtn">
-//             </button>
-//           <div className="dropdown-content">
-//             <a href="/">hi</a>
-//             <a href="/">hello</a>
-//             <a href="/">hey</a>
-//           </div>
-//           </Link>
-//       </div>
-//       &nbsp; &nbsp;
-//       <Link id="right-nav" to="/">
-//         SUBSCRIBE
-//       </Link>
-//       &nbsp; &nbsp;
-//       <Link id="right-nav" to="/login">
-//         SIGN IN
-//       </Link>
-//     </nav>
-//   );
-//   const personalGreeting = () => (
-//     <div>
-//     <hgroup className="header-group">
-//           <Link to="/">  
-//               <img
-//                 className="navbar-logo"
-//                 src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSnzseHuGCDLVHzlbP6aD2oKcCr2F53Hhul4g&usqp=CAU"
-//               />
-//           </Link>
-//       <div className="drop-down-button">
-//           &nbsp; &nbsp;
-//           <Link id="left-nav" to="/products">
-//           SHOP
-//             {/* <button className="dropbtn">
-//             </button> */}
-//           <div className="dropdown-content">
-//             <a href="/">hi</a>
-//             <a href="/">hello</a>
-//             <a href="/">hey</a>
-//           </div>
-//           </Link>
-//           &nbsp; &nbsp;
-//           <Link id="left-nav" to="/">
-//           VISIT
-//             {/* <button className="dropbtn">
-//             </button> */}
-//           <div className="dropdown-content">
-//             <a href="/">hi</a>
-//             <a href="/">hello</a>
-//             <a href="/">hey</a>
-//           </div>
-//           </Link>
-//           &nbsp; &nbsp;
-//           <Link id="left-nav" to="/">
-//           LEARN
-//             {/* <button className="dropbtn">
-//             </button> */}
-//           <div className="dropdown-content">
-//             <a href="/">hi</a>
-//             <a href="/">hello</a>
-//             <a href="/">hey</a>
-//           </div>
-//           </Link>
-//       </div>
-//       &nbsp; &nbsp;
-//       <p className="right-nav">Hi, {currentUser.first_name}!</p>
-//       {/* <p className="personal-greeting">Hi, {currentUser.first_name}!</p> */}
-//       &nbsp; &nbsp;
-//       <Link id="right-nav" to="/">
-//         SUBSCRIBE
-//       </Link>
-//       &nbsp; &nbsp;
-//       <button className="logout-button" onClick={logout}>
-//         LOG OUT
-//       </button>
-//     </hgroup>
-//       {/* <div className="logged-in-right">
-//       <Link id="right-nav" to="/">
-//         SUBSCRIBE
-//       </Link>
-//       &nbsp; &nbsp;
-//       <button className="logout-button" onClick={logout}>
-//         LOG OUT
-//       </button>
-//       </div> */}
-//     </div>
-//   );
-//   return currentUser ? personalGreeting() : sessionLinks();
-// };
-// export default Greeting;
-// display flex, space between on the navbar = main nav
-// divide left and right in separate divs, display flex
-// this is refactoring once more
+/* harmony default export */ __webpack_exports__["default"] = (Greeting);
 
 /***/ }),
 
