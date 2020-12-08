@@ -62,7 +62,7 @@ const Greeting = ({ currentUser, logout }) => {
       &nbsp;   &nbsp;
       <button className="logout-button" onClick={logout}>LOG OUT</button>
       &nbsp;   &nbsp;
-      <i className="fas fa-shopping-cart"></i>
+          <Link to="/cart"><i className="fas fa-shopping-cart"></i></Link>
         <img className='amurica' src={window.usFlag} alt="" />
       </div>
     </hgroup>

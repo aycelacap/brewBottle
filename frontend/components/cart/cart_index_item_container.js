@@ -3,11 +3,12 @@
 // import CartIndexItem from './cart_index_item_container';
 // import { getAllCartItems, deleteCartItem, getCartItem, createCartItem} from '../../actions/cart_actions'
 
-// const mapStateToProps = state => {
+// const mapStateToProps = (state, ownProps) => {
 //     return({
 //     products: Object.values(state.entities.products),
 //     cartItems: Object.values(state.entities.cartItems),
-//     currentUser: state.entities.users[state.session.id]
+//    // currentUser: state.entities.users[state.session.id]
+//     currentUser: state.session.id
 // })}
 
 // const mapDispatchToProps = dispatch => {

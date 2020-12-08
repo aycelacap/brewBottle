@@ -25,6 +25,7 @@ class Product extends React.Component {
         } else {
             // this.props.history.push("/UserSession")
             console.log("else statement: cart")
+            this.props.history.push("/login")
         }
     }
 
@@ -51,7 +52,7 @@ class Product extends React.Component {
                             <div className='product-price'>{product.price}</div>
                             <p className='product-description'>{product.description}</p>
                             {/* <a href="" className="add-to-cart">Add To Cart <i className="fas fa-shopping-cart"></a> */}
-                            <p className="add-to-cart">Add To Cart <i className="fas fa-shopping-cart"></i></p>
+                            <button className="add-to-cart" onClick={this.addToCart}>Add To Cart <i className="fas fa-shopping-cart"></i></button>
                         </div>
                     </div>
                 </div>

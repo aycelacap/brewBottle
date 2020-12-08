@@ -815,7 +815,7 @@ var mapStateToProps = function mapStateToProps(state) {
   return {
     userCartItems: Object.values(state.entities.cartItems),
     cartItems: Object.values(state.entities.cartItems),
-    // currentUserId: state.session.id,
+    currentUserId: state.session.id,
     //test below
     currentUser: state.entities.users[state.session.id]
   };
@@ -850,11 +850,12 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 // import React from 'react';
 // import CartIndexItem from './cart_index_item_container';
 // import { getAllCartItems, deleteCartItem, getCartItem, createCartItem} from '../../actions/cart_actions'
-// const mapStateToProps = state => {
+// const mapStateToProps = (state, ownProps) => {
 //     return({
 //     products: Object.values(state.entities.products),
 //     cartItems: Object.values(state.entities.cartItems),
-//     currentUser: state.entities.users[state.session.id]
+//    // currentUser: state.entities.users[state.session.id]
+//     currentUser: state.session.id
 // })}
 // const mapDispatchToProps = dispatch => {
 //     return ({
@@ -1114,9 +1115,11 @@ var Greeting = function Greeting(_ref) {
     }, "SUBSCRIBE"), "\xA0   \xA0", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
       className: "logout-button",
       onClick: logout
-    }, "LOG OUT"), "\xA0   \xA0", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    }, "LOG OUT"), "\xA0   \xA0", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+      to: "/cart"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
       className: "fas fa-shopping-cart"
-    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
       className: "amurica",
       src: window.usFlag,
       alt: ""
@@ -1516,6 +1519,7 @@ var Product = /*#__PURE__*/function (_React$Component) {
       } else {
         // this.props.history.push("/UserSession")
         console.log("else statement: cart");
+        this.props.history.push("/login");
       }
     }
   }, {
@@ -1548,8 +1552,9 @@ var Product = /*#__PURE__*/function (_React$Component) {
         className: "product-price"
       }, product.price), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         className: "product-description"
-      }, product.description), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-        className: "add-to-cart"
+      }, product.description), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "add-to-cart",
+        onClick: this.addToCart
       }, "Add To Cart ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
         className: "fas fa-shopping-cart"
       }))))));
