@@ -4,7 +4,7 @@ class Product < ApplicationRecord
     has_many_attached :photos
 ``
     has_many :cart_items,
-    foreign_key: :user_id,
+    foreign_key: :product_id,
     class_name: :CartItem
 
     has_one :user, 

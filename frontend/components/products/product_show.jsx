@@ -16,11 +16,11 @@ class Product extends React.Component {
     addToCart(e) {
         e.preventDefault()
         let { product } = this.props
-        
+        debugger
         if (this.props.currentUser) {
             product['quantity'] = this.state.quantity
             this.props
-                .createCartItem({ cart_item: { product: product } })
+                .createCartItem({ user_id: this.props.currentUser , product_id: this.props.product.id, quantity: this.state.quantity })
                 .then(() => this.props.openModal("Add_To_Cart"));
         } else {
             // this.props.history.push("/UserSession")
