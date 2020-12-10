@@ -30,4 +30,4 @@ class CartIndexItem extends React.Component {
     }
 }
 
-export default CartIndexItem
+export default CartIndexItem;

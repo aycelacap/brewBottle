@@ -8,20 +8,46 @@ class Product extends React.Component {
                 size: '',
             }
         this.addToCart = this.addToCart.bind(this);
+        this.addItem = this.addItem.bind(this);
     }
 
         // we need an add to cart function that is an onclick for the logo on line 
 
+    addItem() {
+        this.props.createCartItem({
+            user_id: this.props.currentUser,
+            product_id: this.props.product.id,
+            quantity: this.state.quantity
+        })
+        this.props.history.push('/cart');
+        // window.location.reload(false);
+    }
 
     addToCart(e) {
         e.preventDefault()
         let { product } = this.props
         debugger
         if (this.props.currentUser) {
-            product['quantity'] = this.state.quantity
-            this.props
-                .createCartItem({ user_id: this.props.currentUser , product_id: this.props.product.id, quantity: this.state.quantity })
-                .then(() => this.props.openModal("Add_To_Cart"));
+            // product['quantity'] = this.state.quantity
+            // this.props
+            //     .createCartItem({ 
+            //         user_id: this.props.currentUser, 
+            //         product_id: this.props.product.id, 
+            //         quantity: this.state.quantity 
+            //     })
+            //     // //.then(() => this.props.openModal("Add_To_Cart"));
+            //     .then(() => this.props.history.push("/cart"))
+
+             let productIdArray = this.props.cartItems.map(item => (
+                item.product_id
+            ))
+            if (!productIdArray.includes(this.props.product.id) ) {    
+                this.addItem(this.props.product);
+            } else{
+                return (
+                    alert('Product already in cart!')
+                )
+            }
         } else {
             // this.props.history.push("/UserSession")
             console.log("else statement: cart")

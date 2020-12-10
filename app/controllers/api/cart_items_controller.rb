@@ -27,6 +27,16 @@ class Api::CartItemsController < ApplicationController
         end
     end
 
+    def update
+        @cart_item = CartItem.find_by(id: params[:id])
+        # debugger
+        if @cart_item.update(cart_item_params)
+            render :show
+        else 
+            render json: @cart_item.errors.full_messages, status: 422
+        end
+    end
+
     def destroy
         @cart_item = CartItem.find(params[:id])
         @cart_item.destroy
@@ -36,11 +46,13 @@ class Api::CartItemsController < ApplicationController
     private
     def cart_items_params
         # params.require(:cart_item).permit(:product => [:category_id, :name, :description, :price, :item_type])
-        # # or
         params.require(:cart_item).permit(:user_id, :product_id, :quantity)
     end
 
     # rewrite jbuilder 
     # look (copy) at albys fsp
+
+    # # or
+        # params.require(:cart_item).permit(:user_id, :product_id, :quantity)
 end
   

@@ -11,6 +11,7 @@ const mSTP = (state, ownProps) => {
 // debugger
     return {
         product: state.entities.products[ownProps.match.params.id],
+        cartItems: Object.values(state.entities.cartItems),
         currentUser: state.session.id
     }
 }
