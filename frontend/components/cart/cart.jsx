@@ -7,7 +7,7 @@ class Cart extends React.Component {
     super(props);
     this.state = {
       total: 0,
-      productQty: 0,
+      // productQty: 0,
     };
 
     // this.deleteItem = this.deleteItem.bind(this);
@@ -89,14 +89,15 @@ class Cart extends React.Component {
 
 
   currentUserCartItems() {
+    // fix this function to populate productid and userid
     let { userCartItems } = this.props
     let currentCartItems = {}
 
     userCartItems.forEach(userCartItem => {
-      if (currentCartItems[userCartItem.productId]) {
-        currentCartItems[userCartItem.productId].quantity += userCartItem.quantity
+      if (currentCartItems[userCartItem.product_id]) {
+        currentCartItems[userCartItem.product_id].quantity += userCartItem.quantity
       } else {
-        currentCartItems[userCartItem.productId] = { product: userCartItem.product, quantity: userCartItem.quantity, cartItemId: userCartItem.id }
+        currentCartItems[userCartItem.product_id] = { product: userCartItem.product, quantity: userCartItem.quantity, cartItemId: userCartItem.id }
       }
     })
 
@@ -107,9 +108,12 @@ class Cart extends React.Component {
 
 
   render() {
+
+    if (this.currentUser && this.currentUser.cartItems.length === 0) return null;
     // const { cartItems } = this.props;
     const { currentUser } = this.props;
     let cartItemsObj = Object.entries(this.currentUserCartItems())
+    console.log("cartItemsObj", cartItemsObj)
     
 
     const cart_page = currentUser ? (
@@ -122,12 +126,15 @@ class Cart extends React.Component {
           <div className="left-side-items">
             <div className="left-cart-index-item-div">
               {cartItemsObj.map((cartItem) => {
+                console.log(cartItem);
                 let product = cartItem[1].product;
-                
+                debugger 
+                if (!product) return null;
                 return (
                   <div className="cart-product-info" key={cartItem[1].cartItemId}>
+                  {/* // <div className="cart-product-info" key={cartItem[1].cartItemId}> */}
                     <Link className="cart-product-link" to={`/products/${product.id}`}>
-                      <img className="cart-product-image" src={product.photoUrl} alt="" />
+                      {/* <img className="cart-product-image" src={product.photoUrl} alt="" /> */}
                     </Link>
                     <div className="cart-product-description">
                       <div className="prod-des-top">

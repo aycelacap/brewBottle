@@ -15,15 +15,26 @@ class Api::CartItemsController < ApplicationController
 
     def create
         # debugger
-        @cart_item = CartItem.new(cart_items_params)
-        # @cart_item.product_id = cart_items_params[:product][:id]
-        # @cart_item.quantity = cart_items_params[:product][:quantity]
-        # @cart_item.user_id = @current_user.id
+        existingCart = CartItem.find_by(user_id: cart_items_params[:user_id], product_id: cart_items_params[:product_id])
 
-        if @cart_item.save
+        if existingCart
+            @cart_item = existingCart
+            @cart_item.update(quantity: @cart_item.quantity + 1)
             render :show
         else
-            render json: @cart_item.errors.full_messages, status: 422
+
+        
+
+            @cart_item = CartItem.new(cart_items_params)
+            # @cart_item.product_id = cart_items_params[:product][:id]
+            # @cart_item.quantity = cart_items_params[:product][:quantity]
+            # @cart_item.user_id = @current_user.id
+
+            if @cart_item.save
+                render :show
+            else
+                render json: @cart_item.errors.full_messages, status: 422
+            end
         end
     end
 
@@ -49,8 +60,7 @@ class Api::CartItemsController < ApplicationController
         params.require(:cart_item).permit(:user_id, :product_id, :quantity)
     end
 
-    # rewrite jbuilder 
-    # look (copy) at albys fsp
+    # rewrite jbuilder ?
 
     # # or
         # params.require(:cart_item).permit(:user_id, :product_id, :quantity)

@@ -18,15 +18,16 @@ class Product extends React.Component {
             user_id: this.props.currentUser,
             product_id: this.props.product.id,
             quantity: this.state.quantity
+            
         })
         this.props.history.push('/cart');
-        // window.location.reload(false);
+        console.log("currentU", this.props.currentUser, "prodId", this.props.product.id, "quantity", this.state.quantity)
     }
 
     addToCart(e) {
         e.preventDefault()
         let { product } = this.props
-        debugger
+        // debugger
         if (this.props.currentUser) {
             // product['quantity'] = this.state.quantity
             // this.props
@@ -48,6 +49,7 @@ class Product extends React.Component {
                     alert('Product already in cart!')
                 )
             }
+            console.log("cartItems", this.props.cartItems);
         } else {
             // this.props.history.push("/UserSession")
             console.log("else statement: cart")
