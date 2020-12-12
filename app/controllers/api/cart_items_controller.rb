@@ -60,7 +60,7 @@ class Api::CartItemsController < ApplicationController
         params.require(:cart_item).permit(:user_id, :product_id, :quantity)
     end
 
-    # rewrite jbuilder ?
+    # rewrite jbuilder 
 
     # # or
         # params.require(:cart_item).permit(:user_id, :product_id, :quantity)
