@@ -554,8 +554,8 @@ var Cart = /*#__PURE__*/function (_React$Component) {
 
     _this = _super.call(this, props);
     _this.state = {
-      total: 0 // productQty: 0,
-
+      total: 0,
+      productQty: 0
     }; // this.deleteItem = this.deleteItem.bind(this);
 
     _this.currentUserCartItems = _this.currentUserCartItems.bind(_assertThisInitialized(_this));
