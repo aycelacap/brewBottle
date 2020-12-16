@@ -7,7 +7,7 @@ class Cart extends React.Component {
     super(props);
     this.state = {
       total: 0,
-      productQty: 0,
+      // productQty: 0,
     };
 
     // this.deleteItem = this.deleteItem.bind(this);
