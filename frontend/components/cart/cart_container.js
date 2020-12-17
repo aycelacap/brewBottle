@@ -3,7 +3,7 @@ import { getAllCartItems, createCartItem, deleteCartItem } from '../../actions/c
 import Cart from './cart';
 
 const mapStateToProps = state => { 
-    debugger
+    // debugger
     return ({
     userCartItems: Object.values(state.entities.cartItems),
     cartItems: Object.values(state.entities.cartItems),

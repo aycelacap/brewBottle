@@ -33,11 +33,14 @@ export const clearCartItems = (id) => ({
 //     errors
 // });
 
-export const getAllCartItems = () => dispatch => (
-    CartAPIUtil.getAllCartItems()
-    .then(cartItems => dispatch(receiveCartItems(cartItems)))
+export const getAllCartItems = () => dispatch => {
+    // debugger
+    return CartAPIUtil.getAllCartItems()
+    .then(cartItems => {
+        debugger
+        return dispatch(receiveCartItems(cartItems))})
     // err => dispatch(receiveItemErrors(err.response.JSON))
-);
+};
 
 
 export const getCartItem = cartItemId => dispatch => (

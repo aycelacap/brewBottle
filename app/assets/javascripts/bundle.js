@@ -145,10 +145,11 @@ var clearCartItems = function clearCartItems(id) {
 
 var getAllCartItems = function getAllCartItems() {
   return function (dispatch) {
+    // debugger
     return _util_cart_api_util__WEBPACK_IMPORTED_MODULE_0__["getAllCartItems"]().then(function (cartItems) {
+      debugger;
       return dispatch(receiveCartItems(cartItems));
-    }) // err => dispatch(receiveItemErrors(err.response.JSON))
-    ;
+    }); // err => dispatch(receiveItemErrors(err.response.JSON))
   };
 };
 var getCartItem = function getCartItem(cartItemId) {
@@ -554,7 +555,7 @@ var Cart = /*#__PURE__*/function (_React$Component) {
 
     _this = _super.call(this, props);
     _this.state = {
-      total: 0 // productQty: 0,
+      total: 0 // `productQty: 0,`
 
     }; // this.deleteItem = this.deleteItem.bind(this);
 
@@ -813,7 +814,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var mapStateToProps = function mapStateToProps(state) {
-  debugger;
+  // debugger
   return {
     userCartItems: Object.values(state.entities.cartItems),
     cartItems: Object.values(state.entities.cartItems),

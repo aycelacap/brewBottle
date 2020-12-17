@@ -5,6 +5,9 @@ class Api::CartItemsController < ApplicationController
     def index
         # @cart_items = current_user.cart_items
         # render :index
+        # can use a .includes so we can include a secondary model
+        # json jbuilder (how we format the obj that should be sent up to frontend)
+        # and format the object correctly
         if current_user
             @cart_items = current_user.cart_items
         else
