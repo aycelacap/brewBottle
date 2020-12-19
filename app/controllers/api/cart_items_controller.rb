@@ -6,10 +6,24 @@ class Api::CartItemsController < ApplicationController
         # @cart_items = current_user.cart_items
         # render :index
         # can use a .includes so we can include a secondary model
+
+        # https://apidock.com/rails/ActiveRecord/QueryMethods/includes
+        # rewrite this to be on the class
+        # rework QUERY where we call CartItems class .CartItems.includes.products WHERE USER.iD == currentUser.ID
+
         # json jbuilder (how we format the obj that should be sent up to frontend)
         # and format the object correctly
+
+        # put in debuggers in index and 
+
+
+
+        # go to a/A open and find the SQL includes 
+
         if current_user
-            @cart_items = current_user.cart_items
+            # @cart_items = current_user.cart_items
+            # @products = @cart_items.product
+            @cart_items = CartItem.includes(:product).where(:user_id == current_user.id)
         else
             @cart_items = []
         end
@@ -59,6 +73,7 @@ class Api::CartItemsController < ApplicationController
 
     private
     def cart_items_params
+        # TELLING FRONTEND WHAT IS ALLOWED TO SEND DOWN TO BACKEND, not related to what backend is sending to fronend 
         # params.require(:cart_item).permit(:product => [:category_id, :name, :description, :price, :item_type])
         params.require(:cart_item).permit(:user_id, :product_id, :quantity)
     end

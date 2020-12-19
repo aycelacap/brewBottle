@@ -37,7 +37,7 @@ export const getAllCartItems = () => dispatch => {
     // debugger
     return CartAPIUtil.getAllCartItems()
     .then(cartItems => {
-        debugger
+        // debugger
         return dispatch(receiveCartItems(cartItems))})
     // err => dispatch(receiveItemErrors(err.response.JSON))
 };

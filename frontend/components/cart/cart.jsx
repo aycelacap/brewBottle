@@ -128,7 +128,7 @@ class Cart extends React.Component {
               {cartItemsObj.map((cartItem) => {
                 console.log(cartItem);
                 let product = cartItem[1].product;
-                debugger 
+                // debugger 
                 if (!product) return null;
                 return (
                   <div className="cart-product-info" key={cartItem[1].cartItemId}>
@@ -153,7 +153,7 @@ class Cart extends React.Component {
                         <div className="cart-sizing-price">
                           <div className="cart-product-size-container">
                             <div className="cart-product-size">
-                              Size {product.size}
+                              {/* Size {product.size} */}
                             </div>
                           </div>
                           <div className="price-quantity">

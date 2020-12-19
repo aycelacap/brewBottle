@@ -147,7 +147,7 @@ var getAllCartItems = function getAllCartItems() {
   return function (dispatch) {
     // debugger
     return _util_cart_api_util__WEBPACK_IMPORTED_MODULE_0__["getAllCartItems"]().then(function (cartItems) {
-      debugger;
+      // debugger
       return dispatch(receiveCartItems(cartItems));
     }); // err => dispatch(receiveItemErrors(err.response.JSON))
   };
@@ -698,8 +698,8 @@ var Cart = /*#__PURE__*/function (_React$Component) {
         className: "left-cart-index-item-div"
       }, cartItemsObj.map(function (cartItem) {
         console.log(cartItem);
-        var product = cartItem[1].product;
-        debugger;
+        var product = cartItem[1].product; // debugger 
+
         if (!product) return null;
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "cart-product-info",
@@ -728,7 +728,7 @@ var Cart = /*#__PURE__*/function (_React$Component) {
           className: "cart-product-size-container"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "cart-product-size"
-        }, "Size ", product.size)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "price-quantity"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "cart-item-price"
