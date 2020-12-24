@@ -5,5 +5,6 @@
     
         json.extract! product, :category_id, :name, :description, :item_type, :price
         # json.photos url_for(product.photos)
+        # we are somehow not able to access the photos for the cartitems index, idk why
     end
 # end
