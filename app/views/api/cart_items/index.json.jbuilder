@@ -6,7 +6,7 @@
             json.partial! "api/products/product", product: cart_item.product
             # json.partial! "api/products/product", :products [@products]
             # json.photoUrl url_for(cart_item.product.photo)
-            # 
+            
         end
         # json.productPrice cart_item.product.price
     end
