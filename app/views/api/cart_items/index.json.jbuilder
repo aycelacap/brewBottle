@@ -9,5 +9,6 @@
             
         end
         # json.productPrice cart_item.product.price
+        # why cant i get shit done
     end
 end 
