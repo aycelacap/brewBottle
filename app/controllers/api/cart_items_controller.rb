@@ -20,6 +20,7 @@ class Api::CartItemsController < ApplicationController
 
         # go to a/A open and find the SQL includes 
 
+        # START 1/5
         if current_user
             # @cart_items = current_user.cart_items
             # @products = @cart_items.product
@@ -28,9 +29,17 @@ class Api::CartItemsController < ApplicationController
             @cart_items = []
         end
         render :index
+        # END 1/5
     end
 
+    def show 
+        @cart_item = CartItem.find(params[:id])
+        render :show
+    end
+
+
     def create
+        # START 1/5
         # debugger
         existingCart = CartItem.find_by(user_id: cart_items_params[:user_id], product_id: cart_items_params[:product_id])
 
@@ -53,8 +62,10 @@ class Api::CartItemsController < ApplicationController
                 render json: @cart_item.errors.full_messages, status: 422
             end
         end
+        # END 1/5
     end
 
+    # START 1/5
     def update
         @cart_item = CartItem.find_by(id: params[:id])
         # debugger
@@ -64,6 +75,7 @@ class Api::CartItemsController < ApplicationController
             render json: @cart_item.errors.full_messages, status: 422
         end
     end
+    # END 1/5
 
     def destroy
         @cart_item = CartItem.find(params[:id])
