@@ -7,10 +7,10 @@ class Cart extends React.Component {
     super(props);
     this.state = {
       total: 0,
-      // `productQty: 0,`
+      productQty: 0,
     };
 
-    // this.deleteItem = this.deleteItem.bind(this);
+    this.deleteItem = this.deleteItem.bind(this);
     this.currentUserCartItems = this.currentUserCartItems.bind(this)
     this.total = this.total.bind(this);
     this.numberWithCommas = this.numberWithCommas.bind(this);
@@ -67,6 +67,7 @@ class Cart extends React.Component {
     let cartItemId = cartItem[1].cartItemId
 
     this.props.deleteCartItem(cartItemId)
+
   }
 
   total(cartItem) {
@@ -92,11 +93,14 @@ class Cart extends React.Component {
     // fix this function to populate productid and userid
     let { userCartItems } = this.props
     let currentCartItems = {}
+    // debugger
+    // console.log(currentCartItems)
 
     userCartItems.forEach(userCartItem => {
       if (currentCartItems[userCartItem.product_id]) {
         currentCartItems[userCartItem.product_id].quantity += userCartItem.quantity
       } else {
+        console.log(userCartItem.product)
         currentCartItems[userCartItem.product_id] = { product: userCartItem.product, quantity: userCartItem.quantity, cartItemId: userCartItem.id }
       }
     })

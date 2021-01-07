@@ -555,10 +555,10 @@ var Cart = /*#__PURE__*/function (_React$Component) {
 
     _this = _super.call(this, props);
     _this.state = {
-      total: 0 // `productQty: 0,`
-
-    }; // this.deleteItem = this.deleteItem.bind(this);
-
+      total: 0,
+      productQty: 0
+    };
+    _this.deleteItem = _this.deleteItem.bind(_assertThisInitialized(_this));
     _this.currentUserCartItems = _this.currentUserCartItems.bind(_assertThisInitialized(_this));
     _this.total = _this.total.bind(_assertThisInitialized(_this));
     _this.numberWithCommas = _this.numberWithCommas.bind(_assertThisInitialized(_this));
@@ -658,11 +658,14 @@ var Cart = /*#__PURE__*/function (_React$Component) {
     value: function currentUserCartItems() {
       // fix this function to populate productid and userid
       var userCartItems = this.props.userCartItems;
-      var currentCartItems = {};
+      var currentCartItems = {}; // debugger
+      // console.log(currentCartItems)
+
       userCartItems.forEach(function (userCartItem) {
         if (currentCartItems[userCartItem.product_id]) {
           currentCartItems[userCartItem.product_id].quantity += userCartItem.quantity;
         } else {
+          console.log(userCartItem.product);
           currentCartItems[userCartItem.product_id] = {
             product: userCartItem.product,
             quantity: userCartItem.quantity,
