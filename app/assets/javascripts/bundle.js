@@ -1864,6 +1864,7 @@ var Search = /*#__PURE__*/function (_React$Component) {
         });
       }); // console.log(this.props)
       // find where the search component is placed
+      // and then study lifecycles
 
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "search-bar"

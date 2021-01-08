@@ -41,6 +41,7 @@ class Search extends React.Component {
             <SearchItem clearSearch={this.props.clearSearch} key={product.id} product={product} />))
             // console.log(this.props)
             // find where the search component is placed
+            // and then study lifecycles
             return (
                 <div className="search-bar">
                 <div className="searchbar-icon">
