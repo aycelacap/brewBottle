@@ -36,9 +36,11 @@ class Search extends React.Component {
 
     render() {
         console.log("hello", this.props.results)
+        
         const searchResults = this.props.searches.map(product => (
             <SearchItem clearSearch={this.props.clearSearch} key={product.id} product={product} />))
             // console.log(this.props)
+            // find where the search component is placed
             return (
                 <div className="search-bar">
                 <div className="searchbar-icon">
