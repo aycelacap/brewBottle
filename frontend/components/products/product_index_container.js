@@ -1,7 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { fetchProducts, fetchProductsByCategory } from '../../actions/product_actions';
+import { fetchProducts, fetchProduct, fetchProductsByCategory } from '../../actions/product_actions';
 import ProductIndex from './product_index'
+import { clearSearch } from '../../actions/search_actions';
 
 const mSTP = state => {
     // debugger
@@ -15,7 +16,9 @@ const mDTP = dispatch => {
     return {
         fetchProducts: () => dispatch(fetchProducts()),
         fetchProductsByCategory: (item_type) => dispatch(fetchProductsByCategory(item_type)),
-        fetchProduct: (id) => dispatch(fetchProduct(id))
+        fetchProduct: (id) => dispatch(fetchProduct(id)),
+        clearSearch: () => dispatch(clearSearch()),
+        // you can put a comma at the end of a pojo
     }
 }
 

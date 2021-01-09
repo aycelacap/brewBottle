@@ -1357,7 +1357,9 @@ var ProductIndex = /*#__PURE__*/function (_React$Component) {
     value: function handleGetProducts(e) {
       e.preventDefault();
       var id = e.currentTarget.value;
-      return this.props.fetchProducts(id);
+      return (// this.props.fetchProducts(id) // this works
+        this.props.fetchProduct(id)
+      );
     } // updateIndex(newIdx) {
     //     this.setState({
     //         products: newIdx,
@@ -1369,6 +1371,7 @@ var ProductIndex = /*#__PURE__*/function (_React$Component) {
     value: function handleCategory(e) {
       e.preventDefault();
       var category_id = e.currentTarget.value;
+      this.props.clearSearch();
       return this.props.fetchProductsByCategory(category_id);
     } // try this
 
@@ -1459,6 +1462,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var _actions_product_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions/product_actions */ "./frontend/actions/product_actions.js");
 /* harmony import */ var _product_index__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./product_index */ "./frontend/components/products/product_index.jsx");
+/* harmony import */ var _actions_search_actions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../actions/search_actions */ "./frontend/actions/search_actions.js");
+
 
 
 
@@ -1480,19 +1485,13 @@ var mDTP = function mDTP(dispatch) {
     fetchProductsByCategory: function fetchProductsByCategory(item_type) {
       return dispatch(Object(_actions_product_actions__WEBPACK_IMPORTED_MODULE_2__["fetchProductsByCategory"])(item_type));
     },
-    fetchProduct: function (_fetchProduct) {
-      function fetchProduct(_x) {
-        return _fetchProduct.apply(this, arguments);
-      }
+    fetchProduct: function fetchProduct(id) {
+      return dispatch(Object(_actions_product_actions__WEBPACK_IMPORTED_MODULE_2__["fetchProduct"])(id));
+    },
+    clearSearch: function clearSearch() {
+      return dispatch(Object(_actions_search_actions__WEBPACK_IMPORTED_MODULE_4__["clearSearch"])());
+    } // you can put a comma at the end of a pojo
 
-      fetchProduct.toString = function () {
-        return _fetchProduct.toString();
-      };
-
-      return fetchProduct;
-    }(function (id) {
-      return dispatch(fetchProduct(id));
-    })
   };
 };
 

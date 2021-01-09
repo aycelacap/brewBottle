@@ -4,6 +4,7 @@ import ProductIndexItem from './product_index_item';
 import { Link } from "react-router-dom";
 import SearchContainer from '../search/search_container'
 
+
 class ProductIndex extends React.Component {
     constructor(props) {
         super(props)
@@ -40,7 +41,8 @@ class ProductIndex extends React.Component {
         e.preventDefault();
         const id = e.currentTarget.value 
         return(
-            this.props.fetchProducts(id)
+            // this.props.fetchProducts(id) // this works
+            this.props.fetchProduct(id)
         )         
     }
 
@@ -54,6 +56,8 @@ class ProductIndex extends React.Component {
     handleCategory(e) {
         e.preventDefault()
         let category_id = e.currentTarget.value
+        this.props.clearSearch();
+        
         return (
             this.props.fetchProductsByCategory(category_id)
             )
