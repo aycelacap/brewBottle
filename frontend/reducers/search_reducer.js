@@ -13,6 +13,7 @@ const searchReducer = (state = [], action) => {
 }   
 
 export default searchReducer;
+// we need to clear search after searching
 // we want to have this state as a key in our entities 
 // -> entities reducer where we combine states that are values (nested pojos here as well )of the top 
 // level entities key
