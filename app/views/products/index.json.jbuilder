@@ -6,3 +6,4 @@ json.photo url_for(product.photo)
 # else
 #     json.photo ''
 # end
+# still should put photo in cart
