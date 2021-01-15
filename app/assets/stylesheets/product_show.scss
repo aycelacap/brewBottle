@@ -16,7 +16,9 @@
 }
 
 .productindex-buttons-container {
-    border: 1px solid #01a1dd;
+    // border: 1px solid #01a1dd;
+    // font-family: 'Roboto', sans-serif;
+    // color: grey;
     margin-bottom: 1.8125rem;
     height: auto;
     display: flex;
@@ -26,6 +28,8 @@
 }
 
 .product-index-buttons {
+    font-family: 'Roboto', sans-serif;
+    color: grey;
     border: none;
     font-size: 1rem;
     padding-top: 10px;

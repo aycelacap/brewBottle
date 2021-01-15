@@ -46,12 +46,6 @@ class ProductIndex extends React.Component {
         )         
     }
 
-    // updateIndex(newIdx) {
-    //     this.setState({
-    //         products: newIdx,
-    //     })
-    // };
-
 
     handleCategory(e) {
         e.preventDefault()
@@ -62,7 +56,6 @@ class ProductIndex extends React.Component {
             this.props.fetchProductsByCategory(category_id)
             )
     }
-    // try this
 
     handleAllProduct(e) {
         e.preventDefault()
@@ -70,12 +63,9 @@ class ProductIndex extends React.Component {
     }
 
     render () {
-        // const { products } = this.state
         console.log(this.props.results)
         if (!this.props.products) return null
-        // if (!this.props.category) return null
-        // debugger
-
+    
         let productIdx;
         if (this.props.results.length === 0) {
             

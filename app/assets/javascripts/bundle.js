@@ -1360,12 +1360,7 @@ var ProductIndex = /*#__PURE__*/function (_React$Component) {
       return (// this.props.fetchProducts(id) // this works
         this.props.fetchProduct(id)
       );
-    } // updateIndex(newIdx) {
-    //     this.setState({
-    //         products: newIdx,
-    //     })
-    // };
-
+    }
   }, {
     key: "handleCategory",
     value: function handleCategory(e) {
@@ -1373,8 +1368,7 @@ var ProductIndex = /*#__PURE__*/function (_React$Component) {
       var category_id = e.currentTarget.value;
       this.props.clearSearch();
       return this.props.fetchProductsByCategory(category_id);
-    } // try this
-
+    }
   }, {
     key: "handleAllProduct",
     value: function handleAllProduct(e) {
@@ -1384,11 +1378,8 @@ var ProductIndex = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      // const { products } = this.state
       console.log(this.props.results);
-      if (!this.props.products) return null; // if (!this.props.category) return null
-      // debugger
-
+      if (!this.props.products) return null;
       var productIdx;
 
       if (this.props.results.length === 0) {
