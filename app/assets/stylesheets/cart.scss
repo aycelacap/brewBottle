@@ -1,0 +1,234 @@
+
+.whole-cart-page-wrapper {
+    display: flex;
+    justify-content: space-around;
+    // padding-top: 4rem;
+    font-family: Calibre,Verlag,Helvetica,sans-serif;
+    background-color: #f9f9f9;
+    margin-top: 7%;
+    padding-top: 5%;
+    padding-left: 2%;
+    padding-right: 4.5%;
+}
+
+.cart-body-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 56%;
+    // border: 1px solid red;
+}
+
+.left-side-header {
+    border-bottom: .25rem solid black;
+    display: flex;
+    justify-content: space-between;
+}
+
+.cart-header {
+    font-size: 3rem;
+    font-weight: 600;
+    padding-bottom: 1.2rem;
+}
+
+.cart-items-qty {
+    display: flex;
+    align-items: center;
+    font-size: 1.8rem;
+    font-weight: 600;
+    text-align: right;
+}
+
+.cart-product-info {
+    display: flex;
+    border-bottom: .0625rem solid #e6e6e6;
+    padding-top: 4%;
+    padding-bottom: 4%;
+    margin-bottom: 2%;
+}
+
+.cart-product-description {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: space-between;
+    margin-left: .6875rem;
+}
+
+.prod-des-top {
+    display: flex;
+    flex-direction: column;
+}
+
+.cart-product-name {
+    font-size: 1.3rem;
+    line-height: 1.8rem;
+    font-weight: 600;
+    letter-spacing: 0.8px;
+}
+
+.cart-product-color {
+    margin-top: .375rem;
+    font-size: 1rem;
+    font-weight: 400;
+    letter-spacing: .4px;
+}
+
+.cart-sizing-price {
+    display: flex;
+    justify-content: space-between;
+    margin-top: .75rem;
+    font-size: 1rem;
+    letter-spacing: .4px;
+}
+
+.cart-item-price {
+    display: flex;
+    flex-direction: column;
+    padding-right: 1rem;
+}
+
+.cart-quantity {
+    display: flex;
+    flex-direction: column;
+}
+
+.price-quantity {
+    display: flex;
+}
+
+.cart-product-image {
+    height: 27vh;
+}
+
+.cart-item-price {
+    margin-bottom: 1rem;
+    text-align: right;
+}
+
+.cart-price {
+    margin-right: 1rem;
+}
+
+.cart-total {
+    text-align: right;
+}
+
+.cart-quantity {
+    text-align: right;
+    margin-right: 1rem;
+}
+
+.cart-item-quantity {
+    margin-bottom: 1rem;
+    padding-right: 1rem;
+}
+
+.cart-item-total {
+    margin-bottom: 1rem;
+}
+
+.ship-desc {
+    display: flex;
+    justify-content: space-between;
+}
+
+.right-side-checkout {
+    width: 21%;
+}
+
+.cart-summary {
+    border-bottom: .25rem solid black;
+    font-size: 1.75rem;
+    font-weight: 600;
+    padding-bottom: 1.2rem;
+    padding-top: 1rem;
+}
+
+.delete-cart-item {
+    border: none;
+    outline: none;
+    border-bottom: .0625rem solid #d5d5d5;
+    font-size: 1rem;
+    cursor: pointer;
+    background-color: #f9f9f9;
+}
+
+.delete-cart-item:hover {
+    border-bottom: .0625rem solid #d22030;
+}
+
+
+.cart-shipping-container {
+    display: flex;
+    padding: .75rem 0;
+    line-height: 1.23;
+    justify-content: space-between;
+}
+
+.cart-line {
+    height: .0625rem;
+    background: #e6e6e6;
+    border: none;
+    margin: 0;
+}
+
+.cart-total-continer {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.05rem;
+    font-weight: 600;
+    padding: 1rem 0;
+}
+
+.checkout {
+    width: 100%;
+    background-color: #bfbfbf;
+    border-color: #bfbfbf;
+    color: white;
+    border: .0625rem solid;
+    border-radius: .25rem;
+    font-size: 1rem;
+    letter-spacing: .09375rem;
+    padding: 1rem 2rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.checkout:hover {
+    opacity: 50%;
+}
+
+
+
+
+
+
+.signed-out-cart {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10rem;
+    align-items: center;
+    font-family: Calibre,Verlag,Helvetica,sans-serif;
+    background-color: #f9f9f9;
+    height: 35vh;
+    justify-content: center;
+    font-family: Calibre,Verlag,Helvetica,sans-serif;
+}
+
+.signed-out-message {
+    font-size: 2.8rem;
+    font-weight: 600;
+    margin-bottom: 1.375rem;
+}
+
+.shop-button {
+    background-color: #d31334;
+    border-color: #d31334;
+    color: #fff;
+    border: .0625rem solid;
+    border-radius: .25rem;
+    cursor: pointer;
+    font-weight: 700;
+    letter-spacing: .09375rem;
+    padding: 1rem 2rem;
+}
