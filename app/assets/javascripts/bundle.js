@@ -701,8 +701,7 @@ var Cart = /*#__PURE__*/function (_React$Component) {
         className: "left-cart-index-item-div"
       }, cartItemsObj.map(function (cartItem) {
         console.log(cartItem);
-        var product = cartItem[1].product; // debugger 
-
+        var product = cartItem[1].product;
         if (!product) return null;
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "cart-product-info",

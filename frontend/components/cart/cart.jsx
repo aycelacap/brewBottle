@@ -132,7 +132,6 @@ class Cart extends React.Component {
               {cartItemsObj.map((cartItem) => {
                 console.log(cartItem);
                 let product = cartItem[1].product;
-                // debugger 
                 if (!product) return null;
                 return (
                   <div className="cart-product-info" key={cartItem[1].cartItemId}>
