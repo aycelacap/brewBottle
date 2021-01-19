@@ -215,9 +215,6 @@ class Cart extends React.Component {
     ) : (
         <div className="signed-out-cart">
           <h1 className="signed-out-message">Give your bag some love!</h1>
-          {/* <a className="shop-button" href="#/products">
-            SHOP WHAT'S NEW
-        </a> */}
         <Link className="shop-button" to="/products">SHOP ALL NEW</Link>
         </div>
       );
