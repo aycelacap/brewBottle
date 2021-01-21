@@ -5,6 +5,7 @@ import { getResults, clearSearch } from '../../actions/search_actions'
 const mapStateToProps = (state, ownProps) => ({
     searches: state.entities.search || [],
     // results: Object.values(state.entities.searchReducer)
+    // do I need athe above line
 })
 
 const mapDispatchToProps = dispatch => ({
