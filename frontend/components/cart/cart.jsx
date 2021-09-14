@@ -214,8 +214,8 @@ class Cart extends React.Component {
       </div>
     ) : (
         <div className="signed-out-cart">
-          <h1 className="signed-out-message">Give your bag some love!</h1>
-        <Link className="shop-button" to="/products">SHOP ALL NEW</Link>
+          <h1 className="signed-out-message">ADD TO CART :D</h1>
+        <Link className="shop-button" to="/products">S H O P</Link>
         </div>
       );
     return cart_page;
