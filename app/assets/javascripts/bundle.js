@@ -602,14 +602,14 @@ var Cart = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "updateTotalPrice",
     value: function updateTotalPrice() {
-      var sum = 0;
+      var sum = 0.00;
       var prodQty = 0;
       this.props.cartItems.forEach(function (cartItem) {
         if (cartItem.product) {
-          sum += cartItem.quantity * cartItem.product.price;
+          sum += cartItem.product.price;
         }
 
-        prodQty++;
+        sum;
       });
       this.setState({
         total: sum
@@ -621,7 +621,8 @@ var Cart = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "numberWithCommas",
     value: function numberWithCommas(x) {
-      return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+      // return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+      return x.toFixed(2);
     }
   }, {
     key: "deleteItem",
@@ -890,19 +891,25 @@ var CartIndexItem = /*#__PURE__*/function (_React$Component) {
     _classCallCheck(this, CartIndexItem);
 
     return _super.call(this, props);
-  } //  componentDidMount() {
-  //     this.props.getAllCartItems();
-  // }
-
+  }
 
   _createClass(CartIndexItem, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      this.props.getAllCartItems();
+    }
+  }, {
     key: "render",
     value: function render() {
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "cart-index-item-div"
       }, this.props.cartItems.map(function (cartItem, idx) {
         var product = cartItem.product;
-        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, product.name));
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, product.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, product.color), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, product.size), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+          className: "idx-images",
+          src: product.photoUrl,
+          alt: ""
+        }));
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null));
     }
   }]);
@@ -2480,7 +2487,8 @@ var cartItemsReducer = function cartItemsReducer() {
 
   switch (action.type) {
     case _actions_cart_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_CART_ITEMS"]:
-      return Object.assign({}, action.cartItems);
+      nextState = Object.assign({}, action.cartItems);
+      return nextState;
     // return action.cartItems
 
     case _actions_cart_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_CART_ITEM"]:

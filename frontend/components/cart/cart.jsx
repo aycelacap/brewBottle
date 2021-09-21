@@ -41,14 +41,14 @@ class Cart extends React.Component {
   }
 
   updateTotalPrice() {
-    let sum = 0;
+    let sum = 0.00;
     let prodQty = 0;
 
     this.props.cartItems.forEach(cartItem => {
       if (cartItem.product) {
-        sum += cartItem.quantity * cartItem.product.price;
+        sum += cartItem.product.price;
       }
-      prodQty++;
+      sum;
     })
 
     this.setState({ total: sum })
@@ -58,7 +58,8 @@ class Cart extends React.Component {
 
 
   numberWithCommas(x) {
-    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+    // return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+    return x.toFixed(2)
   }
 
 

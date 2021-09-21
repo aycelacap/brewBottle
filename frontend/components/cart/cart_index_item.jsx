@@ -6,9 +6,9 @@ class CartIndexItem extends React.Component {
       super(props) 
     }
 
-    //  componentDidMount() {
-    //     this.props.getAllCartItems();
-    // }
+     componentDidMount() {
+        this.props.getAllCartItems();
+    }
 
     render() {
       return (
@@ -18,9 +18,9 @@ class CartIndexItem extends React.Component {
           return (
             <div>
               <div>{product.name}</div>
-              {/* <div>{product.color}</div> */}
-              {/* <div>{product.size}</div> */}
-              {/* <img className="idx-images" src={product.photoUrl} alt="" /> */}
+              <div>{product.color}</div>
+              <div>{product.size}</div>
+              <img className="idx-images" src={product.photoUrl} alt="" />
             </div>
           );
         })}

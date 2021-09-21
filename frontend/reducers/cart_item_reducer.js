@@ -6,7 +6,8 @@ const cartItemsReducer = (state = {}, action) => {
     // debugger
     switch (action.type) {
         case RECEIVE_CART_ITEMS:
-            return Object.assign({}, action.cartItems)
+            nextState = Object.assign({}, action.cartItems)
+            return nextState
             // return action.cartItems
         case RECEIVE_CART_ITEM:
             nextState[action.cartItem.id] = action.cartItem
