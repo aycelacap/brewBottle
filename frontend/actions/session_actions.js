@@ -5,7 +5,7 @@ export const RECEIVE_SESSION_ERRORS = "RECEIVE_SESSION_ERRORS";
 export const CLEAR_ERRORS = "CLEAR_ERRORS"
 
 // action creator POJOS
-
+s
 const receiveCurrentUser = (currentUser) => {
     return {
       type: RECEIVE_CURRENT_USER,

@@ -365,6 +365,8 @@ var LOGOUT_CURRENT_USER = "LOGOUT_CURRENT_USER";
 var RECEIVE_SESSION_ERRORS = "RECEIVE_SESSION_ERRORS";
 var CLEAR_ERRORS = "CLEAR_ERRORS"; // action creator POJOS
 
+s;
+
 var receiveCurrentUser = function receiveCurrentUser(currentUser) {
   return {
     type: RECEIVE_CURRENT_USER,
@@ -603,25 +605,25 @@ var Cart = /*#__PURE__*/function (_React$Component) {
     key: "updateTotalPrice",
     value: function updateTotalPrice() {
       var sum = 0.00;
-      var prodQty = 0;
+      var productQty = 0;
       this.props.cartItems.forEach(function (cartItem) {
         if (cartItem.product) {
-          sum += cartItem.product.price;
+          sum += cartItem.quantity * cartItem.product.price;
         }
 
+        productQty++;
         sum;
       });
       this.setState({
         total: sum
       });
       this.setState({
-        productQty: prodQty
+        productQty: productQty
       });
     }
   }, {
     key: "numberWithCommas",
     value: function numberWithCommas(x) {
-      // return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
       return x.toFixed(2);
     }
   }, {
@@ -694,7 +696,7 @@ var Cart = /*#__PURE__*/function (_React$Component) {
         className: "left-side-header"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
         className: "cart-header"
-      }, "My Bag"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "My Cart"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "cart-items-qty"
       }, this.state.productQty, " Items")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "left-side-items"
@@ -745,7 +747,13 @@ var Cart = /*#__PURE__*/function (_React$Component) {
           className: "cart-item-quantity"
         }, "Quantity"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "cart-quantity"
-        }, cartItem[1].quantity)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        }, cartItem[1].quantity, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+          onClick: _this2.increaseQuantity,
+          onChange: _this2.update
+        }, "+"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+          onClick: _this2.decreaseQuantity,
+          onChange: _this2.update
+        }, "-")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "cart-total"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
           className: "cart-item-total"

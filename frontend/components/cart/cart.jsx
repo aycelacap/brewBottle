@@ -42,23 +42,23 @@ class Cart extends React.Component {
 
   updateTotalPrice() {
     let sum = 0.00;
-    let prodQty = 0;
+    let productQty = 0;
 
     this.props.cartItems.forEach(cartItem => {
       if (cartItem.product) {
-        sum += cartItem.product.price;
+        sum += cartItem.quantity * cartItem.product.price;
       }
+      productQty++;
       sum;
     })
 
     this.setState({ total: sum })
-    this.setState({ productQty: prodQty })
+    this.setState({ productQty: productQty })
 
   }
 
 
   numberWithCommas(x) {
-    // return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
     return x.toFixed(2)
   }
 
@@ -125,7 +125,7 @@ class Cart extends React.Component {
       <div className="whole-cart-page-wrapper">
         <div className="cart-body-wrapper">
           <div className="left-side-header">
-            <h1 className="cart-header">My Bag</h1>
+            <h1 className="cart-header">My Cart</h1>
             <div className='cart-items-qty'>{this.state.productQty} Items</div>
           </div>
           <div className="left-side-items">
@@ -169,11 +169,11 @@ class Cart extends React.Component {
                               <p className="cart-item-quantity">Quantity</p>
                               <div className="cart-quantity">
                                 {cartItem[1].quantity}
-                                {/* <span>
-                                    <button onClick={this.decreaseQuantity} onChange={this.update}>-</button>
-                                        <h1>{this.state.productQty}</h1>
-                                    <button onClick={this.increaseQuantity} onChange={this.update}>+</button>
-                                </span> */}
+                                <span>
+                                        <button onClick={this.increaseQuantity} onChange={this.update}>+</button>
+                                        {/* <h1>{this.state.productQty}</h1> */}
+                                        <button onClick={this.decreaseQuantity} onChange={this.update}>-</button>
+                                </span>
                               </div>
                             </div>
                             <div className="cart-total">
