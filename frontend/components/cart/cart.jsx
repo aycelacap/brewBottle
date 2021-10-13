@@ -125,7 +125,7 @@ class Cart extends React.Component {
       <div className="whole-cart-page-wrapper">
         <div className="cart-body-wrapper">
           <div className="left-side-header">
-            <h1 className="cart-header">My Cart</h1>
+            <h1 className="cart-header">Bag</h1>
             <div className='cart-items-qty'>{this.state.productQty} Items</div>
           </div>
           <div className="left-side-items">
@@ -170,9 +170,9 @@ class Cart extends React.Component {
                               <div className="cart-quantity">
                                 {cartItem[1].quantity}
                                 <span>
-                                        <button onClick={this.increaseQuantity} onChange={this.update}>+</button>
+                                        {/* <button onClick={this.increaseQuantity} onChange={this.update}>+</button> */}
                                         {/* <h1>{this.state.productQty}</h1> */}
-                                        <button onClick={this.decreaseQuantity} onChange={this.update}>-</button>
+                                        {/* <button onClick={this.decreaseQuantity} onChange={this.update}>-</button> */}
                                 </span>
                               </div>
                             </div>

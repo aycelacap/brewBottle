@@ -365,8 +365,6 @@ var LOGOUT_CURRENT_USER = "LOGOUT_CURRENT_USER";
 var RECEIVE_SESSION_ERRORS = "RECEIVE_SESSION_ERRORS";
 var CLEAR_ERRORS = "CLEAR_ERRORS"; // action creator POJOS
 
-s;
-
 var receiveCurrentUser = function receiveCurrentUser(currentUser) {
   return {
     type: RECEIVE_CURRENT_USER,
@@ -696,7 +694,7 @@ var Cart = /*#__PURE__*/function (_React$Component) {
         className: "left-side-header"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
         className: "cart-header"
-      }, "My Cart"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "Bag"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "cart-items-qty"
       }, this.state.productQty, " Items")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "left-side-items"
@@ -747,13 +745,7 @@ var Cart = /*#__PURE__*/function (_React$Component) {
           className: "cart-item-quantity"
         }, "Quantity"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "cart-quantity"
-        }, cartItem[1].quantity, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-          onClick: _this2.increaseQuantity,
-          onChange: _this2.update
-        }, "+"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-          onClick: _this2.decreaseQuantity,
-          onChange: _this2.update
-        }, "-")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        }, cartItem[1].quantity, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "cart-total"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
           className: "cart-item-total"
@@ -1580,9 +1572,12 @@ var Product = /*#__PURE__*/function (_React$Component) {
 
         console.log("cartItems", this.props.cartItems);
       } else {
-        // this.props.history.push("/UserSession")
-        console.log("else statement: cart");
-        this.props.history.push("/login");
+        console.log("else statement: cart"); // this.props.history.push("/login")
+
+        this.props.history.push({
+          pathname: '/login',
+          product: product.id
+        });
       }
     }
   }, {
@@ -2014,10 +2009,27 @@ var SessionForm = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "handleSubmit",
     value: function handleSubmit(e) {
+      var _this3 = this;
+
       e.preventDefault();
-      var user = Object.assign({}, this.state);
-      this.props.processForm(user); // redirect: use history
+      window.scrollTo(0, 0);
+      var user = Object.assign({}, this.state); // this.props.processForm(user);
+
+      if (this.props.location.product) {
+        var id = this.props.history.location.product;
+        this.props.history.location.product = false; // this.props.processForm(user);
+        // this.props.history.push(`products/${id}`)
+
+        this.props.processForm(user).then(function () {
+          return _this3.props.history.push("products/".concat(id));
+        });
+      } else {
+        this.props.processForm(user).then(function () {
+          return _this3.props.history.push("/");
+        });
+      } // redirect: use history
       // this.props.history.push("/");
+
     }
   }, {
     key: "renderErrors",
@@ -2047,9 +2059,10 @@ var SessionForm = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "demoUser",
     value: function demoUser(e) {
-      var _this3 = this;
+      var _this4 = this;
 
       e.preventDefault();
+      window.scrollTo(0, 0);
       var demoUser = {
         email: "caffeinated@brewbottle.cafe",
         password: "hunter12",
@@ -2060,20 +2073,20 @@ var SessionForm = /*#__PURE__*/function (_React$Component) {
           password = demoUser.password,
           first_name = demoUser.first_name,
           last_name = demoUser.last_name;
-      var interval = 100;
+      var interval = 30;
 
       var login = function login() {
-        _this3.props.processForm(_this3.state);
+        _this4.props.processForm(_this4.state);
 
-        _this3.props.history.push("/");
+        _this4.props.history.push("/");
       };
 
       if (this.state.email !== email) {
         var inputEmail = setInterval(function () {
-          if (_this3.state.email !== email) {
-            var tempEmail = email.slice(0, _this3.state.email.length + 1);
+          if (_this4.state.email !== email) {
+            var tempEmail = email.slice(0, _this4.state.email.length + 1);
 
-            _this3.setState({
+            _this4.setState({
               email: tempEmail
             });
           } else {
@@ -2085,10 +2098,10 @@ var SessionForm = /*#__PURE__*/function (_React$Component) {
 
       var fillPassword = function fillPassword() {
         var inputPassword = setInterval(function () {
-          if (_this3.state.password !== password) {
-            var tempPassword = password.slice(0, _this3.state.password.length + 1);
+          if (_this4.state.password !== password) {
+            var tempPassword = password.slice(0, _this4.state.password.length + 1);
 
-            _this3.setState({
+            _this4.setState({
               password: tempPassword
             });
           } else {
@@ -2101,6 +2114,7 @@ var SessionForm = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
+      console.log(this.props.location.product);
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "login-form-container"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
@@ -2987,9 +3001,19 @@ var Auth = function Auth(_ref) {
     path: path,
     exact: exact,
     render: function render(props) {
-      return !loggedIn ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Component, props) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Redirect"], {
-        to: "/"
-      });
+      // !loggedIn ? <Component {...props} /> : <Redirect to="/" />
+      if (!loggedIn) {
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Component, props);
+      } else if (loggedIn && props.location.product) {
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Redirect"], {
+          to: "/products/".concat(props.location.product)
+        });
+      } else {
+        //   console.log(props)
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Redirect"], {
+          to: "/"
+        }); // console.log("helllllllooooooooo from the route utiollingjsdabgdjska bd it doesnt make sense why is this not working")
+      }
     }
   });
 };

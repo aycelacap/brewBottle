@@ -20,8 +20,21 @@ class SessionForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
+    window.scrollTo(0,0)
     const user = Object.assign({}, this.state);
-    this.props.processForm(user);
+    // this.props.processForm(user);
+    if (this.props.location.product) {
+      const id = this.props.history.location.product
+      this.props.history.location.product = false
+      // this.props.processForm(user);
+      // this.props.history.push(`products/${id}`)
+      this.props.processForm(user)
+      .then(() => this.props.history.push(`products/${id}`));
+
+    } else {
+      this.props.processForm(user)
+      .then(() => this.props.history.push("/"))
+    }
     // redirect: use history
     // this.props.history.push("/");
   }
@@ -54,6 +67,7 @@ class SessionForm extends React.Component {
 
   demoUser(e) {
     e.preventDefault();
+    window.scrollTo(0,0)
     const demoUser = {
       email: "caffeinated@brewbottle.cafe",
       password: "hunter12",
@@ -61,7 +75,7 @@ class SessionForm extends React.Component {
       last_name: "Brew",
     };
     let { email, password, first_name, last_name} = demoUser;
-    let interval = 100;
+    let interval = 30;
     let login = () => {
       this.props.processForm(this.state);
       this.props.history.push("/")
@@ -91,6 +105,7 @@ class SessionForm extends React.Component {
   }
 
   render() {
+    console.log(this.props.location.product)
     return (
       <div className="login-form-container">
         <form onSubmit={this.handleSubmit} className="login-form-box">

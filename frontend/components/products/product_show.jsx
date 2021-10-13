@@ -51,9 +51,9 @@ class Product extends React.Component {
             }
             console.log("cartItems", this.props.cartItems);
         } else {
-            // this.props.history.push("/UserSession")
             console.log("else statement: cart")
-            this.props.history.push("/login")
+            // this.props.history.push("/login")
+            this.props.history.push({pathname: '/login', product: product.id})
         }
     }
 
