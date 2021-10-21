@@ -8,25 +8,30 @@ class Footer extends React.Component {
                 <div className="footer-wrapper-top-section">
                     <div className="top-container">
                         <div className="account-container">
-                            <div className="account-title">MY ACCOUNT</div>
+                            <div className="account-title"><i className="fab fa-github"></i></div>
+
                             <div className="account">
                             </div>
                         </div>
                     </div>
                     <div className="top-container">
                         <div className="help-container">
-                            <div className="help-title">HELP</div>
+                            <div className="help-title"><a href="https://angel.co/u/ayce-lacap" ></a>
+                                <i className="fab fa-angellist"></i></div>
                         </div>
                     </div>
                     <div className="top-container">
                         <div className="about-us-container">
-                            <div className="about-us-title">ABOUT US</div>
+                            <div className="about-us-title"><a href="https://github.com/aycelacap" ></a>
+                                
+                                <i className="fas fa-user-circle"></i></div>
 
                         </div>
                     </div>
                     <div className="top-container">
                         <div className="science-of-feel-container">
-                            <div className="science-title">SCIENCE OF COFFEE</div>
+                            <div className="science-title"> <a href="https://www.linkedin.com/in/ayce-lacap-00/"><i className="fab fa-linkedin"></i></a>
+                                </div>
                         </div>
                     </div>
                 </div>
@@ -40,9 +45,14 @@ class Footer extends React.Component {
                             </div>
                             <div className="icons">
                                {/* you can place a link tag here */}
+                              
                             </div>
                             <div className="icons">
                             {/* you can place a link tag here */}
+                                
+                            </div>
+                            <div className="icons">
+                                
                             </div>
                         </div>
                     </div>
