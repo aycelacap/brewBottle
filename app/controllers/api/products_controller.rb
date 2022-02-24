@@ -3,11 +3,8 @@ class Api::ProductsController < ApplicationController
         if params[:category_id]
             @products = Product.where(category_id: params[:category_id])
         else
-            # debugger
             @products = Product.all
         end
-        # render "api/products/index"
-        # render "/products"
         render :index
     end
 

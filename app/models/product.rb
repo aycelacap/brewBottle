@@ -2,7 +2,7 @@ class Product < ApplicationRecord
     validates :category_id, :name, :description, :item_type, :price, presence: true
 
     has_many_attached :photos
-``
+
     has_many :cart_items,
     foreign_key: :product_id,
     class_name: :CartItem
