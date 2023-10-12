@@ -63,6 +63,7 @@ Configure your module.rules to use Babel transpilation for:
 JSX
 ES6
 Include devtool: 'source-map'.
+
 11. git commit again (Verify that your .gitignore works).
 
 git push your skeleton.
