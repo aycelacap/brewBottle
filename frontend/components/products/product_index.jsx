@@ -118,6 +118,4 @@ class ProductIndex extends React.Component {
 
 export default ProductIndex;
 
-// Todo:
-// ask about warning = unique key in render 
 

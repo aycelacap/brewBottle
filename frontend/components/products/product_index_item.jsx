@@ -3,6 +3,9 @@ import { Link } from 'react-router-dom'
 
 const ProductIndexItem = ({ product }) => {
     // debugger
+    if (!product) return null;
+    
+    console.log(product.photoUrls)
     return (
             <li className='whole-page-wrapper'>
             <div className='whole-content-wrapper'>
