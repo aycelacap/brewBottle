@@ -1393,8 +1393,7 @@ var ProductIndex = /*#__PURE__*/function (_React$Component) {
   return ProductIndex;
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
-/* harmony default export */ __webpack_exports__["default"] = (ProductIndex); // Todo:
-// ask about warning = unique key in render
+/* harmony default export */ __webpack_exports__["default"] = (ProductIndex);
 
 /***/ }),
 
@@ -1467,6 +1466,8 @@ __webpack_require__.r(__webpack_exports__);
 var ProductIndexItem = function ProductIndexItem(_ref) {
   var product = _ref.product;
   // debugger
+  if (!product) return null;
+  console.log(product.photoUrls);
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
     className: "whole-page-wrapper"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
