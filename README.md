@@ -1,6 +1,6 @@
 # README
 
-[Live Site](https://brewbottle.herokuapp.com/#/)
+[Live Site](https://thawing-beach-94274-961d6daa8592.herokuapp.com/#/)
 
 brewBottle is an e-commerce website, inspired from the Blue Bottle Coffee Company.
 
