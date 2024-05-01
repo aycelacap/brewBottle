@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import { Player } from 'video-react';
 import video from "video-react/lib/components/Video";
 import ReactPlayer from "react-player";
+// import bluebottle from "../../../assets/images/bluebottle"
+// import bluebottle from "./bluebottle.mp4";
 
 const Splash = () => {
     return (
@@ -22,7 +24,7 @@ const Splash = () => {
 
         {/* <div>
           <video className="video-container" loop={true} muted={true} height="100%" width="100%">
-            <source autoPlay src="https://blue-bottle-cms.global.ssl.fastly.net/hbhhv9rz9/video/upload/q_100/v1604951514/qovhlkl1o0mniiihvkvh.ogv" />
+            <source autoPlay src={bluebottle} />
           </video>
         </div> */}
         <ReactPlayer 
@@ -33,7 +35,6 @@ const Splash = () => {
         height="%100"
         loop={true}
         muted={true}/>
-  
 
         <div className='splash-page-main-container'>
           <div className='splash-page-main-image-container'>

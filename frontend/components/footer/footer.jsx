@@ -7,18 +7,17 @@ class Footer extends React.Component {
             <div className="footer-wrapper">
                 <div className="footer-wrapper-top-section">
                     <div className="top-container">
-                        <div className="account-container">
+                        {/* <div className="account-container">
                             <div className="account-title"><i className="fab fa-github"></i></div>
 
-                            <div className="account">
-                            </div>
-                        </div>
+                            <div className="account"></div>
+                        </div> */}
                     </div>
                     <div className="top-container">
-                        <div className="help-container">
+                        {/* <div className="help-container">
                             <div className="help-title"><a href="https://angel.co/u/ayce-lacap" ></a>
                                 <i className="fab fa-angellist"></i></div>
-                        </div>
+                        </div> */}
                     </div>
                     <div className="top-container">
                         <div className="about-us-container">
